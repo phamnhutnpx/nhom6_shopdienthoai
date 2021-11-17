@@ -18,13 +18,12 @@
 			$this->db = new Database();
 			$this->fm = new Format();
 		}
-		public function add_to_cart($quantity, $id){
+		public function add_to_cart($quantity, $id,$customer_id){
 
 			$quantity = $this->fm->validation($quantity);
 			$quantity = mysqli_real_escape_string($this->db->link, $quantity);
 			$id = mysqli_real_escape_string($this->db->link, $id);
-			$sId = session_id();
-			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND sId ='$sId'";
+			$check_cart = "SELECT * FROM tbl_cart WHERE productId = '$id' AND customerId ='$customer_id'";
 			$result_check_cart = $this->db->select($check_cart);
 			if($result_check_cart){
 				$msg = "<span class='error'>Sản phẩm đã được thêm vào</span>";
@@ -38,7 +37,7 @@
 				$price = $result["price"];
 				$productName = $result["productName"];
 
-				$query_insert = "INSERT INTO tbl_cart(productId,quantity,sId,image,price,productName) VALUES('$id','$quantity','$sId','$image','$price','$productName')";
+				$query_insert = "INSERT INTO tbl_cart(productId,quantity,customerId,image,price,productName) VALUES('$id','$quantity','$customer_id','$image','$price','$productName')";
 				$insert_cart = $this->db->insert($query_insert);
 				if($insert_cart){
 					$msg = "<span class='error'>Thêm sản phẩm thành công</span>";
@@ -51,9 +50,8 @@
 		
 
 
-		public function get_product_cart(){
-			$sId = session_id();
-			$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
+		public function get_product_cart($customer_id){
+			$query = "SELECT * FROM tbl_cart WHERE customerId = '$customer_id'";
 			$result = $this->db->select($query);
 			return $result;
 		}
@@ -86,29 +84,20 @@
 			}
 		}
 
-		public function check_cart(){
-			$sId = session_id();
-			$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
+		public function check_cart($customer_id){
+			$query = "SELECT * FROM tbl_cart WHERE customerId = '$customer_id'";
 			$result = $this->db->select($query);
 			return $result;
 		}
 		public function check_order($customer_id){
-			$sId = session_id();
 			$query = "SELECT * FROM tbl_order WHERE customer_id = '$customer_id'";
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function del_all_data_cart(){
-			$sId = session_id();
-			$query = "DELETE FROM tbl_cart WHERE sId = '$sId'";
-			$result = $this->db->delete($query);
-			
-
-		}
+		
 		
 		public function insertOrder($customer_id){
-			$sId = session_id();
-			$query = "SELECT * FROM tbl_cart WHERE sId = '$sId'";
+			$query = "SELECT * FROM tbl_cart WHERE customerId = '$customer_id'";
 			$get_product = $this->db->select($query);
 			if($get_product){
 				while($result = $get_product->fetch_assoc()){
@@ -117,7 +106,6 @@
 					$quantity = $result['quantity'];
 					$price = $result['price'] * $quantity;
 					$image = $result['image'];
-					$customer_id = $customer_id;
 					$query_order = "INSERT INTO tbl_order(productId,productName,quantity,price,image,customer_id) VALUES('$productid','$productName','$quantity','$price','$image','$customer_id')";
 					$insert_order = $this->db->insert($query_order);
 				}
@@ -186,8 +174,5 @@
 			$result = $this->db->update($query);
 			return $result;
 		}
-		
-
-
 	}
 ?>

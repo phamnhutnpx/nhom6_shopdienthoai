@@ -79,13 +79,21 @@ header("Cache-Control: max-age=2592000");
 							<span class="no_product">
 
 								<?php
-								$check_cart = $ct->check_cart();
-								if ($check_cart) {
-									$qty = Session::get("qty");
-									echo ': ' . $qty;
+								$login_check = Session::get('customer_login');
+								if ($login_check) {
+									$customer_id = Session::get('customer_id');
+									$check_cart = $ct->check_cart($customer_id);
+									if ($check_cart) {
+										$qty = Session::get("qty");
+										echo ': ' . $qty;
+									} else {
+										echo 'Trống';
+									}
 								} else {
 									echo 'Trống';
 								}
+
+
 								?>
 
 							</span>
@@ -95,7 +103,6 @@ header("Cache-Control: max-age=2592000");
 				<?php
 				if (isset($_GET['customer_id'])) {
 					$customer_id = $_GET['customer_id'];
-					$delCart = $ct->del_all_data_cart();
 					Session::destroy();
 				}
 				?>

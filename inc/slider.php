@@ -13,7 +13,7 @@
 				    <div class="text list_2_of_1">
 						<h2>DELL</h2>
 						<p><?php echo $resultdell['productName'] ?></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $resultdell['productId']  ?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proid=<?php echo $resultdell['productId']  ?>">Thêm vào giỏ</a></span></div>
 				   </div>
 			   </div>	
 			   <?php
@@ -31,7 +31,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Samsung</h2>
 						  <p><?php echo $resultss['productName'] ?></p>
-						  <div class="button"><span><a href="details.php?proid=<?php echo $resultss['productId']  ?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $resultss['productId']  ?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
 				   <?php
@@ -51,7 +51,7 @@
 				    <div class="text list_2_of_1">
 						<h2>Apple</h2>
 						<p><?php echo $resultap['productName'] ?></p>
-						<div class="button"><span><a href="details.php?proid=<?php echo $resultap['productId']  ?>">Add to cart</a></span></div>
+						<div class="button"><span><a href="details.php?proid=<?php echo $resultap['productId']  ?>">Thêm vào giỏ</a></span></div>
 				   </div>
 			   </div>	
 			      <?php
@@ -69,7 +69,7 @@
 					<div class="text list_2_of_1">
 						  <h2>Canon</h2>
 						  <p><?php echo $resulthw['productName'] ?></p>
-						  <div class="button"><span><a href="details.php?proid=<?php echo $resulthw['productId']  ?>">Add to cart</a></span></div>
+						  <div class="button"><span><a href="details.php?proid=<?php echo $resulthw['productId']  ?>">Thêm vào giỏ</a></span></div>
 					</div>
 				</div>
 				      <?php
@@ -82,7 +82,8 @@
 		   <!-- FlexSlider -->
              
 			<section class="slider">
-				  <div class="flexslider">
+				  <!-- <div class="flexslider"> -->
+				  <div>
 					<ul class="slides">
 						<?php
 						$get_slider = $product->show_slider();

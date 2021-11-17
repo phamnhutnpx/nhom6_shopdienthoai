@@ -301,7 +301,7 @@
 			return $result;
 		}
 		public function getLastestDell(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '6' order by productId desc LIMIT 1";
+			$query = "SELECT * FROM tbl_product WHERE brandId = '16' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}

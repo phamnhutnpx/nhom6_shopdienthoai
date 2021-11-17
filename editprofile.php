@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['save'])) {
 
 							</tr>
 							<tr>
-								<td>SĐT</td>
+								<td>Điện thoại</td>
 								<td>:</td>
 								<td><input type="text" name="phone" value="<?php echo $result['phone'] ?>"></td>
 

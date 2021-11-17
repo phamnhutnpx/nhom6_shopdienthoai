@@ -44,7 +44,7 @@
 					<td><?php echo $result['address'] ?></td>
 				</tr>
 				<tr>
-					<td>SĐT</td>
+					<td>Điện thoại</td>
 					<td>:</td>
 					<td><?php echo $result['phone'] ?></td>
 				</tr>

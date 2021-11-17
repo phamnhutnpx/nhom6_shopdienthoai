@@ -29,19 +29,20 @@
 			}
 			 ?></span>
 			
-			<div>
+			<div class="user-box">
 				<input type="text" placeholder="Username" required="" name="adminUser"/>
 			</div>
-			<div>
+			<div class="user-box">
 				<input type="password" placeholder="Password" required="" name="adminPass"/>
 			</div>
-			<div>
-				<input type="submit" value="Log in" />
+			<div class="btn_login">
+				
+				<input type="submit" value="Đăng nhập" />
 			</div>
 		</form><!-- form -->
-		<div class="button">
+		<!-- <div class="button">
 			<a href="#">Nhóm 07 - LTW</a>
-		</div><!-- button -->
+		</div> -->
 	</section><!-- content -->
 </div><!-- container -->
 </body>

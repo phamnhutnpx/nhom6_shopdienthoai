@@ -14,7 +14,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Product List</h2>
+        <h2>Danh sách sản phẩm</h2>
         <div class="block"> 
         <?php
         if(isset($delpro)){
@@ -26,14 +26,14 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Product Name</th>
-					<th>Product Price</th>
-					<th>Product Image</th>
-					<th>Category</th>
-					<th>Brand</th>
-					<th>Description</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>Tên sản phẩm</th>
+					<th>Giá sản phẩm</th>
+					<th>Ảnh sản phẩm</th>
+					<th>Danh mục</th>
+					<th>Thương hiệu</th>
+					<th>Mô tả</th>
+					<th>Loại</th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -59,14 +59,14 @@
 					 ?></td>
 					<td><?php 
 						if($result['type']==0){
-							echo 'Feathered';
+							echo 'Nổi bật';
 						}else{
-							echo 'Non-Feathered';
+							echo 'Không nổi bật';
 						}
 
 					?></td>
 					
-					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Edit</a> || <a href="?productid=<?php echo $result['productId'] ?>">Delete</a></td>
+					<td><a href="productedit.php?productid=<?php echo $result['productId'] ?>">Sửa</a> || <a href="?productid=<?php echo $result['productId'] ?>">Xóa</a></td>
 				</tr>
 				<?php
 					}

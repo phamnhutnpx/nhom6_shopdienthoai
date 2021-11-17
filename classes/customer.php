@@ -5,9 +5,7 @@
 ?>
 
 <?php
-	/**
-	 * 
-	 */
+	
 	class customer
 	{
 		private $db;
@@ -97,8 +95,5 @@
 			}
 		}
 		
-		
-
-
 	}
 ?>

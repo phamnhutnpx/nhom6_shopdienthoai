@@ -11,7 +11,7 @@
                         <label>Tiêu đề trang web</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Website Title..."  name="title" class="medium" />
+                        <input type="text" placeholder="Nhập tiêu đề trang web"  name="title" class="medium" />
                     </td>
                 </tr>
 				 <tr>
@@ -19,7 +19,7 @@
                         <label>Đặc trưng trang web</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Enter Website Slogan..." name="slogan" class="medium" />
+                        <input type="text" placeholder="Nhập khẩu hiệu trang web" name="slogan" class="medium" />
                     </td>
                 </tr>
 				 
@@ -28,7 +28,7 @@
                     <td>
                     </td>
                     <td>
-                        <input type="submit" name="submit" Value="Update" />
+                        <input type="submit" name="submit" Value="Cập nhật" />
                     </td>
                 </tr>
             </table>

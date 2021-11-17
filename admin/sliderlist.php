@@ -19,7 +19,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Slider List</h2>
+        <h2>Danh sách slide</h2>
         <div class="block"> 
         <?php
         if(isset($del_slider)){
@@ -30,10 +30,10 @@
 			<thead>
 				<tr>
 					<th>No.</th>
-					<th>Slider Title</th>
-					<th>Slider Image</th>
-					<th>Type</th>
-					<th>Action</th>
+					<th>Tiêu đề slide</th>
+					<th>Ảnh slide</th>
+					<th>Loại</th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -65,7 +65,7 @@
 					</td>		
 				<td>
 					
-					<a href="?slider_del=<?php echo $result_slider['sliderId'] ?>" onclick="return confirm('Are you sure to Delete!');" >Delete</a> 
+					<a href="?slider_del=<?php echo $result_slider['sliderId'] ?>" onclick="return confirm('Are you sure to Delete!');" >Xóa</a> 
 				</td>
 				</tr>
 				<?php

@@ -29,7 +29,7 @@
 					<th>ID</th>
 					<th>Tên bình luận</th>
 					<th>Bình luận</th>
-					<th>Action</th>
+					<th>Thao tác</th>
 				</tr>
 			</thead>
 			<tbody>

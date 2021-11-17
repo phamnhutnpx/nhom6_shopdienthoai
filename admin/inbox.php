@@ -72,7 +72,7 @@ include_once ($filepath.'/../helpers/format.php');
 							<td><?php echo $result['quantity'] ?></td>
 							<td><?php echo $result['price'].' '.'VNĐ' ?></td>
 							<td><?php echo $result['customer_id'] ?></td>
-							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">Người xem</a></td>
+							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ?>">Người đặt</a></td>
 							<td>
 							<?php 
 							if($result['status']==0){

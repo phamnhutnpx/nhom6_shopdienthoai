@@ -1,6 +1,5 @@
 <?php 
 	include 'inc/header.php';
-	// include 'inc/slider.php';
 ?>
 <?php
 	if(!isset($_GET['catid']) || $_GET['catid']==NULL){
@@ -8,13 +7,7 @@
     }else{
         $id = $_GET['catid']; 
     }
-    
-    // if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    //     $catName = $_POST['catName'];
-    //     $updateCat = $cat->update_category($catName,$id);
-        
-    // }
 ?>
  <div class="main">
     <div class="content">

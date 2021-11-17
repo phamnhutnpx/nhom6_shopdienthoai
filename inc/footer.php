@@ -15,7 +15,7 @@
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Tại sao bạn mua</h4>
+					<h4>Tại sao bạn nên mua?</h4>
 						<ul>
 						<li><a href="about.php">Thông tin web</a></li>
 						<li><a href="faq.php">Dịch vụ</a></li>
@@ -27,8 +27,8 @@
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Tài khoản của tôi</h4>
 						<ul>
-							<li><a href="contact.php">Đăng nhập</a></li>
-							<li><a href="index.php">Xem giỏ</a></li>
+							<li><a href="Login.php">Đăng nhập</a></li>
+							<li><a href="cart.php">Xem giỏ hàng</a></li>
 							<li><a href="#">Sản phẩm yêu thích</a></li>
 							<li><a href="#">Theo dõi đơn hàng của tôi</a></li>
 							<li><a href="faq.php">Hướng dẫn</a></li>
@@ -54,9 +54,6 @@
    	 					</div>
 				</div>
 			</div>
-			<div class="copy_right">
-				<p>Training with live project &amp; All rights Reseverd </p>
-		   </div>
      </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -71,15 +68,6 @@
  
     <script type="text/javascript">
 		$(document).ready(function() {
-			/*
-			var defaults = {
-	  			containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-	 		};
-			*/
-			
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});

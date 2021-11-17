@@ -67,10 +67,10 @@
 					WHERE cartId = '$cartId'";
 			$result = $this->db->update($query);
 			if($result){
-				$msg = "<span class='error'>Cập nhật thành công</span>";
+				$msg = "<span class='error'>Cập nhật số lượng thành công</span>";
 				return $msg;
 			}else{
-				$msg = "<span class='error'>Product Quantity Updated Not Successfully</span>";
+				$msg = "<span class='error'>Cập nhật số lượng không thành công</span>";
 				return $msg;
 			}
 		
@@ -157,10 +157,10 @@
 					WHERE id = '$id' AND date_order='$time' AND price ='$price'";
 			$result = $this->db->update($query);
 			if($result){
-				$msg = "<span class='success'>Update Order Successfully</span>";
+				$msg = "<span class='success'>Cập nhật đặt hàng thành công</span>";
 				return $msg;
 			}else{
-				$msg = "<span class='error'>Update Order Not Successfully</span>";
+				$msg = "<span class='error'>Cập nhật đặt hàng thất bại</span>";
 				return $msg;
 			}
 		}
@@ -172,10 +172,10 @@
 					WHERE id = '$id' AND date_order='$time' AND price ='$price'";
 			$result = $this->db->update($query);
 			if($result){
-				$msg = "<span class='success'>Detele Order Successfully</span>";
+				$msg = "<span class='success'>Xóa thành công</span>";
 				return $msg;
 			}else{
-				$msg = "<span class='error'>Delete Order Not Successfully</span>";
+				$msg = "<span class='error'>Xóa thất bại</span>";
 				return $msg;
 			}
 		}

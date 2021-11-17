@@ -28,14 +28,15 @@
 		}
 		public function insert_product($data,$files){
 
-			
+			//xử lí kí tự đầu vào thông qua mysqli
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
 			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
 			$price = mysqli_real_escape_string($this->db->link, $data['price']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
-			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
+
+			//Kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
 			$file_name = $_FILES['image']['name'];
 			$file_size = $_FILES['image']['size'];
@@ -47,17 +48,17 @@
 			$uploaded_image = "uploads/".$unique_image;
 			
 			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type=="" || $file_name ==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống trường này</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);
 				$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
-					$alert = "<span class='success'>Insert Product Successfully</span>";
+					$alert = "<span class='success'>Thêm sản phẩm thành công</span>";
 					return $alert;
 				}else{
-					$alert = "<span class='error'>Insert Product Not Success</span>";
+					$alert = "<span class='error'>Thêm sản phẩm thất bại</span>";
 					return $alert;
 				}
 			}
@@ -66,7 +67,7 @@
 			$sliderName = mysqli_real_escape_string($this->db->link, $data['sliderName']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
 			
-			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
+			//Kiểm tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
 
 			$file_name = $_FILES['image']['name'];
@@ -81,30 +82,30 @@
 
 
 			if($sliderName=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không để trống trường này</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 2048000) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước ảnh không được lớn hơn 2GB</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
-				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				     // echo "<span class='error'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";	
+				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
 					$query = "INSERT INTO tbl_slider(sliderName,type,slider_image) VALUES('$sliderName','$type','$unique_image')";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Slider Added Successfully</span>";
+						$alert = "<span class='success'>Thêm slide thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Slider Added Not Success</span>";
+						$alert = "<span class='error'>Thêm slide thất bại</span>";
 						return $alert;
 					}
 				}
@@ -197,13 +198,13 @@
 					//Nếu người dùng chọn ảnh
 					if ($file_size > 20480) {
 
-		    		 $alert = "<span class='success'>Image Size should be less then 2MB!</span>";
+		    		 $alert = "<span class='success'>Kích thước ảnh không được lớn hơn 2GB</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
-				     // echo "<span class='error'>You can upload only:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>You can upload only:-".implode(', ', $permited)."</span>";
+				     // echo "<span class='error'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";	
+				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);

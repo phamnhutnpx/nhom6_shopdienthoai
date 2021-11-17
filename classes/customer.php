@@ -5,9 +5,7 @@
 ?>
 
 <?php
-	/**
-	 * 
-	 */
+	
 	class customer
 	{
 		private $db;
@@ -63,7 +61,7 @@
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
 			if($name=="" || $city=="" || $zipcode=="" || $email=="" || $address=="" || $country=="" || $phone =="" || $password ==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không được để trống trường này</span>";
 				return $alert;
 			}else{
 				$check_email = "SELECT * FROM tbl_customer WHERE email='$email' LIMIT 1";
@@ -75,10 +73,10 @@
 					$query = "INSERT INTO tbl_customer(name,city,zipcode,email,address,country,phone,password) VALUES('$name','$city','$zipcode','$email','$address','$country','$phone','$password')";
 					$result = $this->db->insert($query);
 					if($result){
-						$alert = "<span class='success'>Customer Created Successfully</span>";
+						$alert = "<span class='success'>Tạo khách hàng thành công</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Customer Created Not Successfully</span>";
+						$alert = "<span class='error'>Tạo khách hàng thất bại</span>";
 						return $alert;
 					}
 				}
@@ -88,7 +86,7 @@
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$password = mysqli_real_escape_string($this->db->link, md5($data['password']));
 			if($email=='' || $password==''){
-				$alert = "<span class='error'>Password and Email must be not empty</span>";
+				$alert = "<span class='error'>Mật khẩu và email không được để trống</span>";
 				return $alert;
 			}else{
 				$check_login = "SELECT * FROM tbl_customer WHERE email='$email' AND password='$password'";
@@ -102,7 +100,7 @@
 					$alert = "<span class='success'>Đăng nhập thành công <a href='payment.php'>Đến trang thanh toán</a></span>";
 						return $alert;
 				}else{
-					$alert = "<span class='error'>Email or Password doesn't match</span>";
+					$alert = "<span class='error'>Email mật khẩu không đúng</span>";
 					return $alert;
 				}
 			}
@@ -120,24 +118,21 @@
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
 			
 			if($name=="" || $zipcode=="" || $email=="" || $address=="" || $phone ==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+				$alert = "<span class='error'>Không để trống trường này</span>";
 				return $alert;
 			}else{
 				$query = "UPDATE tbl_customer SET name='$name',zipcode='$zipcode',email='$email',address='$address',phone='$phone' WHERE id ='$id'";
 				$result = $this->db->insert($query);
 				if($result){
-						$alert = "<span class='success'>Customer Updated Successfully</span>";
+						$alert = "<span class='success'>Cập nhật người dùng thành công</span>";
 						return $alert;
 				}else{
-						$alert = "<span class='error'>Customer Updated Not Successfully</span>";
+						$alert = "<span class='error'>Cập nhật người dùng thất bại</span>";
 						return $alert;
 				}
 				
 			}
 		}
 		
-		
-
-
 	}
 ?>

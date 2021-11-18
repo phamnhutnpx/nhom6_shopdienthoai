@@ -7,7 +7,6 @@ include 'inc/header.php';
 		<div class="support">
 			<div class="support_desc">
 				<h3>Hỗ trợ trực tuyến</h3>
-				<p><span>24 giờ | 7 ngày một tuần | 365 ngày một năm &nbsp;&nbsp; Hỗ trợ kỹ thuật trực tiếp</span></p>
 			</div>
 			<img src="web/images/contact.png" alt="" />
 			<div class="clear"></div>

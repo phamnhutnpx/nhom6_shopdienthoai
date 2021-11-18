@@ -63,7 +63,7 @@ header("Cache-Control: max-age=2592000");
 	<div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href="index.php"><img src="../images/logo.png" alt="" /></a>
+				<a href="index.php"><img src="images/logo.png" alt="" /></a>
 			</div>
 			<div class="header_top_right">
 				<div class="search_box">
@@ -72,34 +72,7 @@ header("Cache-Control: max-age=2592000");
 						<input type="submit" name="search_product" value="Tìm kiếm">
 					</form>
 				</div>
-				<div class="shopping_cart">
-					<div class="cart">
-						<a href="cart.php" title="View my shopping cart" rel="nofollow">
-							<span class="cart_title">Giỏ hàng</span>
-							<span class="no_product">
-
-								<?php
-								$login_check = Session::get('customer_login');
-								if ($login_check) {
-									$customer_id = Session::get('customer_id');
-									$check_cart = $ct->check_cart($customer_id);
-									if ($check_cart) {
-										$qty = Session::get("qty");
-										echo ': ' . $qty;
-									} else {
-										echo 'Trống';
-									}
-								} else {
-									echo 'Trống';
-								}
-
-
-								?>
-
-							</span>
-						</a>
-					</div>
-				</div>
+				
 				<?php
 				if (isset($_GET['customer_id'])) {
 					$customer_id = $_GET['customer_id'];

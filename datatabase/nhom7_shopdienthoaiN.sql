@@ -302,7 +302,7 @@ ALTER TABLE `tbl_brand`
 -- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_category`
@@ -314,7 +314,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `tbl_order`

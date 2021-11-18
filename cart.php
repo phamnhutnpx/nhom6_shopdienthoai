@@ -132,8 +132,8 @@ if (!isset($_GET['id'])) {
 			$check_cart = $ct->check_cart($customer_id);
 			if (Session::get('customer_id') == true && $check_cart) {
 			?>
-				<a href="payment.php"> Thanh toán</a>
-
+				<a class="login" href="payment.php"> Thanh toán</a>
+				
 		</div>
 	<?php
 			} else {

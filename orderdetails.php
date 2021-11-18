@@ -24,19 +24,19 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
-			    	<h2>Your Details Ordered</h2>			    	
+			    	<h2>Chi tiết đơn hàng của bạn</h2>			    	
 			    	
 						<table class="tblone">
 							<tr>
 								<th width="10%">ID</th>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="15%">Quantity</th>
-								<th width="10%">Date</th>
-								<th width="10%">Status</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="15%">Số lượng</th>
+								<th width="10%">Ngày</th>
+								<th width="10%">Trạng thái</th>
 								
-								<th width="10%">Action</th>
+								<th width="10%">Thao tác</th>
 							</tr>
 							<?php
 							$customer_id = Session::get('customer_id');

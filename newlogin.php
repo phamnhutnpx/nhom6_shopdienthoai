@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 	$login_Customers = $cs->login_customers($_POST);
 }
 ?>
-<div class="main">
+<div class="main" id="content">
 	<div class="content">
 		<div class="login_panel">
 			<h3>Đăng nhập</h3>

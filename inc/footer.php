@@ -15,7 +15,7 @@
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Tại sao bạn nên mua từ chúng tôi?</h4>
+					<h4>Địa chỉ</h4>
 						<ul>
 						<li><a href="contact.php">Thông tin web</a></li>
 						<li><a href="contact.php">Dịch vụ</a></li>

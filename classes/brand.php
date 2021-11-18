@@ -16,24 +16,25 @@ class brand
 		$this->fm = new Format();
 	}
 
-	public function insert_brand($brandName)
+	public function insert_brand($brand_Name)
 	{
 
-		$brandName = $this->fm->validation($brandName);
-		$brandName = mysqli_real_escape_string($this->db->link, $brandName);
+		$brand_Name = $this->fm->validation($brand_Name);
+		$brand_Name = mysqli_real_escape_string($this->db->link, $brand_Name);
 
-		if (empty($brandName)) {
+		if (empty($brand_Name)) {
 			$alert = "<span class='error'>Không được để trống thương hiệu</span>";
 			return $alert;
 		} else {
-			$query_check = "SELECT * FROM tbl_brand WHERE brandName = $brandName";
-				if($query_check)
+			$query_check = "SELECT * FROM tbl_brand WHERE brandName = '$brand_Name'";
+			$result_query_check = $this->db->select($query_check);
+			if($result_query_check)
 				{
 					$alert = "<span class='error'>Thương hiệu đã tồn tại!</span>";
 					return $alert;
 				}
 				else{
-			$query = "INSERT INTO tbl_brand(brandName) VALUES('$brandName')";
+			$query = "INSERT INTO tbl_brand(brandName) VALUES('$brand_Name')";
 			$result = $this->db->insert($query);
 			if ($result) {
 				$alert = "<span class='success'>Thêm thương hiệu thành công</span>";

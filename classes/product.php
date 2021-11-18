@@ -246,8 +246,15 @@
 
 		}
 		public function del_product($id){
+			$query_check = "SELECT * FROM tbl_order, tbl_product as pro where tbl_order.productId  = pro.productId and pro.productId = '$id'";
+		$result_check = $this->db->select($query_check);
+		if ($result_check) {
+			$alert = '<span class = "error">Sản phẩm đang nằm trong danh sách đơn hàng! Không thể xóa được!</span>';
+			return $alert;
+		} else {
 			$query = "DELETE FROM tbl_product where productId = '$id'";
 			$result = $this->db->delete($query);
+			$query_del_cart = "DELETE FROM tbl_cart where productId = '$id'";
 			if($result){
 				$alert = "<span class='success'>Xóa sản phẩm thành công!</span>";
 				return $alert;
@@ -255,7 +262,7 @@
 				$alert = "<span class='error'>Xóa sản phẩm không thành công!</span>";
 				return $alert;
 			}
-			
+			}
 		}
 		public function getproductbyId($id){
 			$query = "SELECT * FROM tbl_product where productId = '$id'";

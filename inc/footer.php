@@ -7,21 +7,21 @@
 				<div class="col_1_of_4 span_1_of_4">
 						<h4>Thông tin shop</h4>
 						<ul>
-						<li><a href="#">Thông tin web</a></li>
-						<li><a href="#">Dịch vụ</a></li>
-						<li><a href="#"><span>Tìm kiếm nâng cao</span></a></li>
-						<li><a href="#">Đặt và trở lại</a></li>
-						<li><a href="#"><span>Kết nối</span></a></li>
+						<li><a href="contact.php">Thông tin web</a></li>
+						<li><a href="contact.php">Dịch vụ</a></li>
+						<li><a href="contact.php"><span>Tìm kiếm nâng cao</span></a></li>
+						<li><a href="contact.php">Đặt và trở lại</a></li>
+						<li><a href="contact.php"><span>Kết nối</span></a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Tại sao bạn nên mua?</h4>
+					<h4>Tại sao bạn nên mua từ chúng tôi?</h4>
 						<ul>
-						<li><a href="about.php">Thông tin web</a></li>
-						<li><a href="faq.php">Dịch vụ</a></li>
-						<li><a href="#">Chính sách bảo mật</a></li>
+						<li><a href="contact.php">Thông tin web</a></li>
+						<li><a href="contact.php">Dịch vụ</a></li>
+						<li><a href="contact.php">Chính sách bảo mật</a></li>
 						<li><a href="contact.php"><span>Bản đồ</span></a></li>
-						<li><a href="preview.php"><span>Cụm từ tìm kiếm</span></a></li>
+						<li><a href="contact.php"><span>Cụm từ tìm kiếm</span></a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
@@ -29,18 +29,16 @@
 						<ul>
 							<li><a href="Login.php">Đăng nhập</a></li>
 							<li><a href="cart.php">Xem giỏ hàng</a></li>
-							<li><a href="#">Sản phẩm yêu thích</a></li>
-							<li><a href="#">Theo dõi đơn hàng của tôi</a></li>
-							<li><a href="faq.php">Hướng dẫn</a></li>
+							<li><a href="cart.php">Sản phẩm yêu thích</a></li>
+							<li><a href="cart.php">Theo dõi đơn hàng của tôi</a></li>
+							<li><a href="cart.php">Hướng dẫn</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Kết nối</h4>
 						<ul>
-							<li><span>0394830xxx</span></li>
-							<li><a href="https://qrgo.page.link/34LuF">
-								<img src="admin/uploads/qrcode.png">
-							</a></li>
+							<li><span>+84948300875</span></li>
+							<li><span>+84943012248</span></li>
 						</ul>
 						<div class="social-icons">
 							<h4>Follow Us</h4>
@@ -72,7 +70,7 @@
 			
 		});
 	</script>
-    <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+<a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
     <link href="css/flexslider.css" rel='stylesheet' type='text/css' />
 	  <script defer src="js/jquery.flexslider.js"></script>
 	  <script type="text/javascript">

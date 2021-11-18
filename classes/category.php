@@ -30,8 +30,9 @@
 				$alert = "<span class='error'>Danh mục không được để trống</span>";
 				return $alert;
 			}else{
-				$query_check = "SELECT * FROM tbl_category WHERE catName = $catName";
-				if($query_check)
+				$query_check = "SELECT * FROM tbl_category WHERE catName = '$catName'";
+				$result_query_check = $this->db->select($query_check);
+				if($result_query_check)
 				{
 					$alert = "<span class='error'>Danh mục đã tồn tại!</span>";
 					return $alert;

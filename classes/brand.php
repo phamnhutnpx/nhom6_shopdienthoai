@@ -26,8 +26,8 @@ class brand
 			$alert = "<span class='error'>Không được để trống thương hiệu</span>";
 			return $alert;
 		} else {
-			$query_check = "SELECT * FROM tbl_brand WHERE brandName = $brandName";
-				if($query_check)
+			$query_check = "SELECT * FROM tbl_brand WHERE brandName = '$brandName'";
+				if($this->db->select($query_check))
 				{
 					$alert = "<span class='error'>Thương hiệu đã tồn tại!</span>";
 					return $alert;

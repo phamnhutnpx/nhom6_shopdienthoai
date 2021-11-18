@@ -77,15 +77,9 @@
         <div class="grid_12">
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="index.php"><span>Trang chủ</span></a> </li>
-<<<<<<< HEAD
 				<li class="ic-typography"><a href="changepassword.php"><span>Đổi mật khẩu</span></a></li>
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Đơn đặt hàng</span></a></li>
                 <li class="ic-charts"><a href="../index.php"><span>Đến trang web</span></a></li>
-=======
-                <li class="ic-form-style"><a href="titleslogan.php"><span>Thông tin</span></a></li>
-				<li class="ic-grid-tables"><a href="inbox.php"><span>Đơn đặt hàng</span></a></li>
-                
->>>>>>> 04d901be9f2ee8bd5a64e90f1fde299907d35138
             </ul>
         </div>
         <div class="clear">

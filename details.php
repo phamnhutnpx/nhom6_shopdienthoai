@@ -11,21 +11,9 @@ if (!isset($_GET['proid']) || $_GET['proid'] == NULL) {
 $customer_id = Session::get('customer_id');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
-	$login_check = Session::get('customer_login');
-	if ($login_check == false) {
-		echo '
-			<script>
-			var result = confirm("Bạn phải đăng nhập để vào giỏ hàng!");
-			if (result == true) {
-				window.location ="login.php"
-			} else {
-				history.back()
-			}
-			</script>';
-	} else {
+
 		$quantity = $_POST['quantity'];
 		$insertCart = $ct->add_to_cart($quantity, $id, $customer_id);
-	}
 }
 ?>
 <div class="main">
@@ -54,7 +42,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 							<div class="add-cart">
 								<form action="" method="post">
 									<input type="number" class="buyfield" name="quantity" value="1" min="1" />
-									<input type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng" />
+									<?php
+									$login_check = Session::get('customer_login');
+									$temp='';
+									if ($login_check == false) 
+										$temp = '<button ><a class"buysubmit" onclick = "return confirm(\'Bạn phải đăng nhập để vào giỏ hàng?\') " href="login.php">Thêm vào giỏ hàng</a></button>';
+									else
+										$temp = '<input type="submit" class="buysubmit" name="submit" value="Thêm vào giỏ hàng" />';
+
+										echo $temp;
+									?>
 								</form>
 								<?php
 								if (isset($insertCart)) {

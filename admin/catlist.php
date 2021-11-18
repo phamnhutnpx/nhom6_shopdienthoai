@@ -39,7 +39,7 @@
 						<tr class="odd gradeX">
 							<td><?php echo $i; ?></td>
 							<td><?php echo $result['catName'] ?></td>
-							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Thay đổi</a> || <a onclick = "return confirm('Are you want to delete?')" href="?delid=<?php echo $result['catId'] ?>">Xóa</a></td>
+							<td><a href="catedit.php?catid=<?php echo $result['catId'] ?>">Thay đổi</a> || <a onclick = "return confirm('Bạn có muốn xóa không?')" href="?delid=<?php echo $result['catId'] ?>">Xóa</a></td>
 						</tr>
 						<?php
 					}

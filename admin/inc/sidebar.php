@@ -23,12 +23,12 @@
                 <li><a class="menuitem">Sản phẩm</a>
                     <ul class="submenu">
                         <li><a href="productadd.php">Thêm sản phẩm</a> </li>
-                        <li><a href="productlist.php">Liệt kê sản phẩm</a> </li>
+                        <li><a href="productlist.php">Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>
                  <li><a class="menuitem">Đơn hàng</a>
                     <ul class="submenu">
-                        <li><a href="inbox.php">Liệt kê đơn hàng</a> </li>
+                        <li><a href="inbox.php">Danh sách đơn hàng</a> </li>
                       
                     </ul>
                 </li>   

@@ -3,8 +3,8 @@
 ?>
 <?php
 
+$customer_id = Session::get('customer_id');
 	if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
-       $customer_id = Session::get('customer_id');
        $insertOrder = $ct->insertOrder($customer_id);
        $delCart = $ct->del_all_data_cart($customer_id);
     }
@@ -58,7 +58,7 @@
 						<table class="tblone">
 							<tr>
 								<th width="5%">Mã</th>
-								<th width="15%">Tên sản phẩm</th>
+								<th width="15%">Tên</th>
 								
 								<th width="15%">Giá</th>
 								<th width="25%">Số lượng</th>
@@ -129,7 +129,7 @@
 					   </table>
 					  <?php
 					}else{
-						echo 'Giỏ của bạn đang trống! Hãy mua sắm ngay bây giờ';
+						echo 'Giỏ của bạn đang trống! <a href ="index.php">Hãy đi mua sắm ngay bây giờ.</a>';
 					}
 					  ?>
 					
@@ -146,7 +146,7 @@
 
 				?>
 				<tr>
-					<td>Name</td>
+					<td>Họ tên</td>
 					<td>:</td>
 					<td><?php echo $result['name'] ?></td>
 				</tr>
@@ -157,12 +157,12 @@
 					<td><?php echo $result['email'] ?></td>
 				</tr>
 				<tr>
-					<td>Address</td>
+					<td>Địa chỉ</td>
 					<td>:</td>
 					<td><?php echo $result['address'] ?></td>
 				</tr>
 				<tr>
-					<td>Phone</td>
+					<td>Điện thoại</td>
 					<td>:</td>
 					<td><?php echo $result['phone'] ?></td>
 				</tr>

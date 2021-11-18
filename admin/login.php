@@ -5,7 +5,7 @@
 	$class = new adminlogin();
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      	$adminUser = $_POST['adminUser'];
-     	$adminPass = md5($_POST['adminPass']);
+     	$adminPass = sha1($_POST['adminPass']);
 
      	$login_check = $class->login_admin($adminUser,$adminPass);
      	

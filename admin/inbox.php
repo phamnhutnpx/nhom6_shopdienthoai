@@ -47,7 +47,7 @@ include_once ($filepath.'/../helpers/format.php');
 							<th>No.</th>
 							<th>Thời gian đặt</th>
 							<th>Sản phẩm</th>
-							<th>Chất lượng</th>
+							<th>Số lượng</th>
 							<th>Giá</th>
 							<th>ID người dùng</th>
 							<th>Địa chỉ</th>

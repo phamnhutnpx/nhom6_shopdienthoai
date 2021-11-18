@@ -252,6 +252,14 @@
 			$alert = '<span class = "error">Sản phẩm đang nằm trong danh sách đơn hàng! Không thể xóa được!</span>';
 			return $alert;
 		} else {
+			$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+			$get_image = $this->db->select($query);
+			if($get_image)
+			{
+				$result_image = $get_image->fetch_assoc();
+				$temp = $result_image['image'];
+				unlink('../admin/uploads/'.$temp);
+			}
 			$query = "DELETE FROM tbl_product where productId = '$id'";
 			$result = $this->db->delete($query);
 			$query_del_cart = "DELETE FROM tbl_cart where productId = '$id'";
@@ -307,28 +315,6 @@
 			$result = $this->db->select($query);
 			return $result;
 		}
-		public function getLastestDell(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '16' order by productId desc LIMIT 1";
-			$result = $this->db->select($query);
-			return $result;
-		}
-		public function getLastestOppo(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '7' order by productId desc LIMIT 1";
-			$result = $this->db->select($query);
-			return $result;
-		}
-		public function getLastestHuawei(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '6' order by productId desc LIMIT 1";
-			$result = $this->db->select($query);
-			return $result;
-		}
-		public function getLastestSamsung(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '9' order by productId desc LIMIT 1";
-			$result = $this->db->select($query);
-			return $result;
-		}
-		
-
 
 	}
 ?>

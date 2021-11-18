@@ -57,7 +57,7 @@
                         <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminName') ?></li>
+                            <li>Xin chào <?php echo Session::get('adminName') ?></li>
                         
                             <?php
                             if(isset($_GET['action']) && $_GET['action']=='logout'){

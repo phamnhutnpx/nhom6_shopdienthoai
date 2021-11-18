@@ -4,18 +4,6 @@ include 'inc/header.php';
 <?php
 $login_check = Session::get('customer_login');
 $customer_id = Session::get('customer_id');
-if ($login_check== false) {
-	echo '
-	<script>
-	var result = confirm("Bạn phải đăng nhập để vào giỏ hàng!");
-	if (result == true) {
-		window.location ="login.php"
-	} else {
-		history.back()
-	}
-	</script>';
-	
-}
 
 if (isset($_GET['cartid'])) {
 	$cartid = $_GET['cartid'];

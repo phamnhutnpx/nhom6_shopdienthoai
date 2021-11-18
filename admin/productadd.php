@@ -97,7 +97,7 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        <input type="text" name="price" placeholder="Giá sản phẩm" class="medium" />
                     </td>
                 </tr>
             
@@ -126,7 +126,7 @@
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" Value="Save" />
+                        <input type="submit" name="submit" Value="Thêm" />
                     </td>
                 </tr>
             </table>

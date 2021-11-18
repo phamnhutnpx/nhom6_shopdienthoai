@@ -30,6 +30,13 @@
 				$alert = "<span class='error'>Danh mục không được để trống</span>";
 				return $alert;
 			}else{
+				$query_check = "SELECT * FROM tbl_category WHERE catName = $catName";
+				if($query_check)
+				{
+					$alert = "<span class='error'>Danh mục đã tồn tại!</span>";
+					return $alert;
+				}
+				else{
 				$query = "INSERT INTO tbl_category(catName) VALUES('$catName')";
 				$result = $this->db->insert($query);
 				if($result){
@@ -38,6 +45,7 @@
 				}else{
 					$alert = "<span class='error'>Thêm danh mục thất bại</span>";
 					return $alert;
+				}
 				}
 			}
 		}
@@ -69,6 +77,12 @@
 
 		}
 		public function del_category($id){
+			$query_check = "SELECT * FROM tbl_category as cat, tbl_product as pro where cat.catId = pro.catId and cat.catId = '$id'";
+		$result_check = $this->db->select($query_check);
+		if ($result_check) {
+			$alert = '<span class = "error">Danh mục đang còn sản phẩm! Không thể xóa được!</span>';
+			return $alert;
+		} else {
 			$query = "DELETE FROM tbl_category where catId = '$id'";
 			$result = $this->db->delete($query);
 			if($result){
@@ -78,7 +92,7 @@
 				$alert = "<span class='error'>Danh mục xóa thất bại</span>";
 				return $alert;
 			}
-			
+		}
 		}
 		public function getcatbyId($id){
 			$query = "SELECT * FROM tbl_category where catId = '$id'";

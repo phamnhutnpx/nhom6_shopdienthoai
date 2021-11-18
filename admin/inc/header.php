@@ -77,10 +77,9 @@
         <div class="grid_12">
             <ul class="nav main">
                 <li class="ic-dashboard"><a href="index.php"><span>Trang chủ</span></a> </li>
-                <li class="ic-form-style"><a href="titleslogan.php"><span>Thông tin</span></a></li>
 				<li class="ic-typography"><a href="changepassword.php"><span>Đổi mật khẩu</span></a></li>
 				<li class="ic-grid-tables"><a href="inbox.php"><span>Đơn đặt hàng</span></a></li>
-                <!-- <li class="ic-charts"><a href=""><span>Visit Website</span></a></li> -->
+                <li class="ic-charts"><a href="../index.php"><span>Đến trang web</span></a></li>
             </ul>
         </div>
         <div class="clear">

@@ -13,7 +13,6 @@
 
         $brandName = $_POST['brandName'];
         $updateBrand = $brand->update_brand($brandName,$id);
-        
     }
 
 ?>
@@ -43,7 +42,7 @@
                         </tr>
 						<tr> 
                             <td>
-                                <input type="submit" name="submit" Value="Update" />
+                                <input type="submit" name="submit" Value="Cập nhật" />
                             </td>
                         </tr>
                     </table>

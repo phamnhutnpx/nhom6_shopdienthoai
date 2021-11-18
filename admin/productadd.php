@@ -97,7 +97,7 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input type="number" name="price" placeholder="Giá sản phẩm" class="medium" />
+                        <input type="text" name="price" placeholder="Giá sản phẩm" class="medium" />
                     </td>
                 </tr>
             

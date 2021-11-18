@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 07:08 PM
+-- Generation Time: Nov 18, 2021 at 04:51 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -74,7 +74,7 @@ INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 CREATE TABLE `tbl_cart` (
   `cartId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
-  `sId` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `customerId` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `productName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -120,7 +120,8 @@ CREATE TABLE `tbl_customer` (
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `address`, `phone`, `email`, `password`) VALUES
-(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b');
+(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
+(7, 'Tuấn', 'Hà tĩnh', '093467584', 'tuan@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab');
 
 -- --------------------------------------------------------
 
@@ -298,7 +299,7 @@ ALTER TABLE `tbl_brand`
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tbl_category`
@@ -310,7 +311,7 @@ ALTER TABLE `tbl_category`
 -- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_order`
@@ -322,7 +323,7 @@ ALTER TABLE `tbl_order`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `tbl_slider`

@@ -97,7 +97,7 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input type="text" name="price" placeholder="Enter Price..." class="medium" />
+                        <input type="number" name="price" placeholder="Enter Price..." class="medium" />
                     </td>
                 </tr>
             

@@ -407,6 +407,7 @@ input[type="number"] {
     margin-left: 10px;
     text-align: center;
     width: 144px;
+    float: right;
 }
 
 .cartoption a {
@@ -2086,8 +2087,8 @@ table.tblone img {
 
 @media only screen and (max-width:1024px) {
     .wrap {
-        width: 90%;
-        padding: 0 2%;
+        width: 96%;
+        /* padding: 0 2%; */
     }
     .search_box form input[type="text"] {
         width: 143px;
@@ -2194,13 +2195,12 @@ table.tblone img {
     }
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:884px) {
     .wrap {
-        width: 90%;
-        padding: 0 2%;
+        width: 98%;
     }
-    .search_box form input[type="text"] {
-        width: 183px;
+    .search_box {
+        float: right;
     }
     .shopping_cart {
         width: 180px;
@@ -2448,7 +2448,7 @@ table.tblone img {
 
 @media only screen and (max-width: 640px) {
     .wrap {
-        width: 90%;
+        width: 96%;
     }
     /*** Header ****/
     .logo {
@@ -2711,7 +2711,7 @@ table.tblone img {
 
 @media only screen and (max-width: 480px) {
     .wrap {
-        width: 90%;
+        width: 100%;
     }
     /*** Header ****/
     .logo {
@@ -2719,11 +2719,6 @@ table.tblone img {
         width: 100%;
         text-align: center;
     }
-    /* .header_top_right {
-        float: inherit;
-        width: 100%;
-        margin-top: 20px;
-    } */
     .search_box {
         float: inherit;
         width: 100%;

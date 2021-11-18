@@ -122,7 +122,7 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input type="text" value="<?php echo $result_product['price'] ?>" name="price" class="medium" />
+                        <input type="number" value="<?php echo $result_product['price'] ?>" name="price" class="medium" />
                     </td>
                 </tr>
             

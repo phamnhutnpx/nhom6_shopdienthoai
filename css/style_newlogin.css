@@ -1,0 +1,129 @@
+.footer,
+.menu,
+.header_top {
+    display: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* background: linear-gradient(#333, #444); */
+    background-image: url('https://images.unsplash.com/photo-1529610542-3d3fa2e6535c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGhvbmUlMjBkYXJrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    width: 400px;
+    /* padding: 40px; */
+    transform: translateX(-50%);
+    /* background: rgba(0, 0, 0, .5); */
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    transition: 0.3s;
+}
+
+.buttons a,
+.buttons input,
+.content {
+    border-radius: 10px;
+}
+
+.content h3 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.content .user-box {
+    position: relative;
+}
+
+.content .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+.content .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+div .login_panel,
+div .content {
+    background: rgba(0, 0, 0, .5);
+}
+
+.buttons a,
+.buttons input {
+    position: relative;
+    padding: 10px 10px;
+    color: #333;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 20px;
+    letter-spacing: 4px;
+    opacity: 0.6;
+}
+
+.buttons input {
+    float: right;
+}
+
+.buttons a {
+    text-decoration: none !important;
+    background: #fff;
+    float: left;
+    margin-right: 12px;
+    line-height: 27px;
+}
+
+.buttons a:hover,
+.buttons input:hover {
+    background: #fff;
+    color: #111;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 30px #fff, 0 0 70px #fff;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.login_panel {
+    float: left;
+    width: 100%;
+    padding: 25px;
+    border: none;
+    border-radius: 3px;
+}
+
+.login_panel .field,
+.login_panel input[type="text"],
+.login_panel input[type="password"] {
+    width: 100%;
+}

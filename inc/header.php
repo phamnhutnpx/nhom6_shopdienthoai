@@ -36,6 +36,7 @@ header("Cache-Control: max-age=2592000");
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+	
 	<script src="js/jquerymain.js"></script>
 	<script src="js/script.js" type="text/javascript"></script>
 
@@ -100,7 +101,7 @@ header("Cache-Control: max-age=2592000");
 							<li class="active"><a href="index.php">Trang chủ</a></li>
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-									Danh mục sản phẩm
+									Danh mục
 									<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<?php

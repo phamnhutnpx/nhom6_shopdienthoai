@@ -82,8 +82,7 @@
 		   <!-- FlexSlider -->
              
 			<section class="slider">
-				  <!-- <div class="flexslider"> -->
-				  <div>
+				  <div class="flexslider">
 					<ul class="slides">
 						<?php
 						$get_slider = $product->show_slider();

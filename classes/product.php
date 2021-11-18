@@ -87,15 +87,15 @@
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
-					if ($file_size > 2048000) {
+					if ($file_size > 2048) {
 
-		    		 $alert = "<span class='success'>Kích thước ảnh không được lớn hơn 2GB</span>";
+		    		 $alert = "<span class='error'>Kích thước ảnh không được lớn hơn 20MB</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
 					{
 				     // echo "<span class='error'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";	
-				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
+				    $alert = "<span class='error'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
 					move_uploaded_file($file_temp,$uploaded_image);
@@ -196,9 +196,9 @@
 			}else{
 				if(!empty($file_name)){
 					//Nếu người dùng chọn ảnh
-					if ($file_size > 20480) {
+					if ($file_size > 2048) {
 
-		    		 $alert = "<span class='success'>Kích thước ảnh không được lớn hơn 2GB</span>";
+		    		 $alert = "<span class='error'>Kích thước ảnh không được lớn hơn 20MB</span>";
 					return $alert;
 				    } 
 					elseif (in_array($file_ext, $permited) === false) 
@@ -306,17 +306,17 @@
 			return $result;
 		}
 		public function getLastestOppo(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '3' order by productId desc LIMIT 1";
+			$query = "SELECT * FROM tbl_product WHERE brandId = '7' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
 		public function getLastestHuawei(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '4' order by productId desc LIMIT 1";
+			$query = "SELECT * FROM tbl_product WHERE brandId = '6' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}
 		public function getLastestSamsung(){
-			$query = "SELECT * FROM tbl_product WHERE brandId = '2' order by productId desc LIMIT 1";
+			$query = "SELECT * FROM tbl_product WHERE brandId = '9' order by productId desc LIMIT 1";
 			$result = $this->db->select($query);
 			return $result;
 		}

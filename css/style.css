@@ -393,6 +393,7 @@ input[type="number"] {
     background: #70389C;
 }
 
+/*** Login,register ***/
 .login {
     background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
     border: 1px solid #cecece;
@@ -412,7 +413,8 @@ input[type="number"] {
 }
 
 
-/*** Login ***/
+
+
 
 .register_account h3,
 .login_panel h3 {
@@ -571,6 +573,15 @@ button.grey:hover,
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
+.login_panel .field{
+    width: 92%;
+    padding: 8px;
+}
+
+.register_account .field{
+    padding: 8px;
+    width: 340px;
+}
 
 /** End Login ***/
 

@@ -235,10 +235,10 @@
 				}
 				$result = $this->db->update($query);
 					if($result){
-						$alert = "<span class='success'>Product Updated Successfully</span>";
+						$alert = "<span class='success'>Cập nhật sản phẩm thành công!</span>";
 						return $alert;
 					}else{
-						$alert = "<span class='error'>Product Updated Not Success</span>";
+						$alert = "<span class='error'>Cập nhật sản phẩm không thành công!</span>";
 						return $alert;
 					}
 				
@@ -249,10 +249,10 @@
 			$query = "DELETE FROM tbl_product where productId = '$id'";
 			$result = $this->db->delete($query);
 			if($result){
-				$alert = "<span class='success'>Product Deleted Successfully</span>";
+				$alert = "<span class='success'>Xóa sản phẩm thành công!</span>";
 				return $alert;
 			}else{
-				$alert = "<span class='error'>Product Deleted Not Success</span>";
+				$alert = "<span class='error'>Xóa sản phẩm không thành công!</span>";
 				return $alert;
 			}
 			

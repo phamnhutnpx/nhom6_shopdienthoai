@@ -15,7 +15,7 @@
     	<div class="cartoption">		
 			<div class="cartpage">
 			    <div class="not_found">
-			    	<h3>Page doesn't found</h3>
+			    	<h4>Không tìm thấy trang. <a href = 'index.php'>Quay về Trang chủ</a></h4>
 			    </div>
 			</div>
 					

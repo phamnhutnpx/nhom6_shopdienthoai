@@ -1,14 +1,12 @@
 <?php 
 	include 'inc/header.php';
-	// include 'inc/slider.php';
-	
 ?>
 <?php
 
 	if(isset($_GET['orderid']) && $_GET['orderid']=='order'){
        $customer_id = Session::get('customer_id');
        $insertOrder = $ct->insertOrder($customer_id);
-       $delCart = $ct->del_all_data_cart();
+       $delCart = $ct->del_all_data_cart($customer_id);
     }
     
 
@@ -40,7 +38,7 @@
     <div class="content">
     	<div class="section group">
 			<div class="heading">
-	    		<h3>Offline Payment</h3>
+	    		<h3>Thanh toán bằng tiền mặt</h3>
 	    	</div>
 	    		
 	    	<div class="clear"></div>
@@ -59,16 +57,16 @@
 			    	?>
 						<table class="tblone">
 							<tr>
-								<th width="5%">ID</th>
-								<th width="15%">Product Name</th>
+								<th width="5%">Mã</th>
+								<th width="15%">Tên sản phẩm</th>
 								
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
+								<th width="15%">Giá</th>
+								<th width="25%">Số lượng</th>
+								<th width="20%">Tổng giá</th>
 								
 							</tr>
 							<?php
-							$get_product_cart = $ct->get_product_cart();
+							$get_product_cart = $ct->get_product_cart($customer_id);
 							if($get_product_cart){
 								$subtotal = 0;
 								$qty = 0;
@@ -101,7 +99,7 @@
 							
 						</table>
 						<?php
-							$check_cart = $ct->check_cart();
+							$check_cart = $ct->check_cart($customer_id);
 								if($check_cart){
 								?>
 						<table style="float:right;text-align:left;margin:5px" width="40%">
@@ -131,7 +129,7 @@
 					   </table>
 					  <?php
 					}else{
-						echo 'Your Cart is Empty ! Please Shopping Now';
+						echo 'Giỏ của bạn đang trống! Hãy mua sắm ngay bây giờ';
 					}
 					  ?>
 					
@@ -152,26 +150,7 @@
 					<td>:</td>
 					<td><?php echo $result['name'] ?></td>
 				</tr>
-				<tr>
-					<td>City</td>
-					<td>:</td>
-					<td><?php echo $result['city'] ?></td>
-				</tr>
-				<tr>
-					<td>Phone</td>
-					<td>:</td>
-					<td><?php echo $result['phone'] ?></td>
-				</tr>
-				<!-- <tr>
-					<td>Country</td>
-					<td>:</td>
-					<td><?php echo $result['country'] ?></td>
-				</tr> -->
-				<tr>
-					<td>Zipcode</td>
-					<td>:</td>
-					<td><?php echo $result['zipcode'] ?></td>
-				</tr>
+				
 				<tr>
 					<td>Email</td>
 					<td>:</td>
@@ -183,7 +162,12 @@
 					<td><?php echo $result['address'] ?></td>
 				</tr>
 				<tr>
-					<td colspan="3"><a href="editprofile.php">Update Profile</a></td>
+					<td>Phone</td>
+					<td>:</td>
+					<td><?php echo $result['phone'] ?></td>
+				</tr>
+				<tr>
+					<td colspan="3"><a href="editprofile.php">Cập nhật hồ sơ</a></td>
 					
 				</tr>
 				
@@ -197,7 +181,7 @@
  		</div>
 
  	</div>
-	<center><a href="?orderid=order" class="a_order" >Order Now</a></center><br>
+	<center><a href="?orderid=order" class="a_order" >Đặt hàng ngay</a></center><br>
  </div>
 </form>
 <?php 

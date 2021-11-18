@@ -122,7 +122,7 @@ if (!isset($_GET['id'])) {
 					</table>
 				<?php
 				} else {
-					echo 'Your Cart is Empty ! Please Shopping Now';
+					echo 'Giỏ hàng của bạn đang trống! Hãy đến mua sắm ngay!';
 				}
 				?>
 

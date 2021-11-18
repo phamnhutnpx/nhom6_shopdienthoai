@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 			}
 			?>
 			<form action="" method="post">
-				<input type="text" name="email" class="field" placeholder="Email của bạn">
+				<input type="email" name="email" class="field" placeholder="Email của bạn">
 				<input type="password" name="password" class="field" placeholder="Mật khẩu">
 				<p class="note"><a href="#">Quên mật khẩu</a></p>
 				<div class="buttons">
@@ -58,10 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 									<input type="text" name="name" placeholder="Họ tên">
 								</div>
 								<div>
-									<input type="text" name="email" placeholder="Email">
+									<input type="email" name="email" class="field" placeholder="Email">
 								</div>
 								<div>
-									<input type="text" name="password" placeholder="Mật khẩu">
+									<input type="password" name="password" class="field" placeholder="Mật khẩu">
 								</div>
 							</td>
 							<td>
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 									<input type="text" name="address" placeholder="Địa chỉ">
 								</div>
 								<div>
-									<input type="text" name="phone" placeholder="SĐT">
+									<input type="text" name="phone" placeholder="Điện thoại">
 								</div>
 
 							</td>

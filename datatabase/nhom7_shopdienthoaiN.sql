@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 04:51 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 18, 2021 lúc 05:17 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `nhom7_shopdienthoai`
+-- Cơ sở dữ liệu: `nhom7_shopdienthoai`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Cấu trúc bảng cho bảng `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -37,16 +37,16 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_admin`
+-- Đang đổ dữ liệu cho bảng `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adminPass`, `level`) VALUES
-(1, 'nhom07', 'nhom07@gmail.com', 'nhom07', '4a7d1ed414474e4033ac29ccb8653d9b', 0);
+(1, 'nhom07', 'nhom07@gmail.com', 'nhom07', '39dfa55283318d31afe5a3ff4a0e3253e2045e43', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_brand`
+-- Cấu trúc bảng cho bảng `tbl_brand`
 --
 
 CREATE TABLE `tbl_brand` (
@@ -55,7 +55,7 @@ CREATE TABLE `tbl_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_brand`
+-- Đang đổ dữ liệu cho bảng `tbl_brand`
 --
 
 INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
@@ -68,13 +68,13 @@ INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_cart`
+-- Cấu trúc bảng cho bảng `tbl_cart`
 --
 
 CREATE TABLE `tbl_cart` (
   `cartId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
-  `customerId` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `customerId` int(11) NOT NULL,
   `productName` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `quantity` int(11) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE `tbl_cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Cấu trúc bảng cho bảng `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -93,7 +93,7 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_category`
+-- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`catId`, `catName`) VALUES
@@ -103,7 +103,7 @@ INSERT INTO `tbl_category` (`catId`, `catName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_customer`
+-- Cấu trúc bảng cho bảng `tbl_customer`
 --
 
 CREATE TABLE `tbl_customer` (
@@ -116,17 +116,16 @@ CREATE TABLE `tbl_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_customer`
+-- Đang đổ dữ liệu cho bảng `tbl_customer`
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `address`, `phone`, `email`, `password`) VALUES
-(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '827ccb0eea8a706c4c34a16891f84e7b'),
-(7, 'Tuấn', 'Hà tĩnh', '093467584', 'tuan@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab');
+(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order`
+-- Cấu trúc bảng cho bảng `tbl_order`
 --
 
 CREATE TABLE `tbl_order` (
@@ -142,7 +141,7 @@ CREATE TABLE `tbl_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_order`
+-- Đang đổ dữ liệu cho bảng `tbl_order`
 --
 
 INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quantity`, `price`, `image`, `status`, `date_order`) VALUES
@@ -151,7 +150,7 @@ INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quant
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_product`
+-- Cấu trúc bảng cho bảng `tbl_product`
 --
 
 CREATE TABLE `tbl_product` (
@@ -170,16 +169,20 @@ CREATE TABLE `tbl_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_product`
+-- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQuantity`, `product_soldout`, `product_remain`, `catId`, `brandId`, `product_desc`, `type`, `price`, `image`) VALUES
-(29, 'Xiaomi redmi note 11', '', '', '0', '', 20, 16, '<p>Xiaomi redmi note 11</p>', 0, '7500000', '56ce5d1ee0.jpg');
+(29, 'Xiaomi redmi note 11', '', '', '0', '', 20, 16, '<p>Xiaomi redmi note 11</p>', 0, '7500000', '56ce5d1ee0.jpg'),
+(30, 'Điện thoại Samsung Galaxy Z Fold3 5G 512GB', '', '', '0', '', 20, 6, '<p>Điện thoại Samsung Galaxy Z Fold3 5G 512GB</p>', 0, '43990000', 'caecebb338.jpg'),
+(31, 'Điện thoại iPhone 13 Pro Max 128GB', '', '', '0', '', 20, 7, '<p>Điện thoại iPhone 13 Pro Max 128GB</p>', 0, '33990000', '13edd60559.jpg'),
+(32, 'Điện thoại OPPO Reno6 Pro 5G', '', '', '0', '', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', '1a98cfd5af.jpg'),
+(33, 'Điện thoại OPPO Reno6 Pro 5G', '', '', '0', '', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', 'c84795d856.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_slider`
+-- Cấu trúc bảng cho bảng `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -190,18 +193,18 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_slider`
+-- Đang đổ dữ liệu cho bảng `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALUES
-(15, 'slide1', '482c47490e.png', 1),
-(16, 'slide2', 'd922f62f2d.png', 1),
-(17, 'slide3', '1ced091f25.png', 1);
+(18, 'slide1', '6f1525cbf7.png', 1),
+(19, 'slide2', 'a8961840b2.png', 1),
+(20, 'slide3', '9374ffe429.png', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_warehouse`
+-- Cấu trúc bảng cho bảng `tbl_warehouse`
 --
 
 CREATE TABLE `tbl_warehouse` (
@@ -212,7 +215,7 @@ CREATE TABLE `tbl_warehouse` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_warehouse`
+-- Đang đổ dữ liệu cho bảng `tbl_warehouse`
 --
 
 INSERT INTO `tbl_warehouse` (`id_warehouse`, `id_sanpham`, `sl_nhap`, `sl_ngaynhap`) VALUES
@@ -222,117 +225,117 @@ INSERT INTO `tbl_warehouse` (`id_warehouse`, `id_sanpham`, `sl_nhap`, `sl_ngaynh
 (4, 20, '5', '2019-07-16 18:51:40');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Chỉ mục cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
--- Indexes for table `tbl_brand`
+-- Chỉ mục cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   ADD PRIMARY KEY (`brandId`);
 
 --
--- Indexes for table `tbl_cart`
+-- Chỉ mục cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`cartId`);
 
 --
--- Indexes for table `tbl_category`
+-- Chỉ mục cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`catId`);
 
 --
--- Indexes for table `tbl_customer`
+-- Chỉ mục cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_order`
+-- Chỉ mục cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_product`
+-- Chỉ mục cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`productId`);
 
 --
--- Indexes for table `tbl_slider`
+-- Chỉ mục cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`sliderId`);
 
 --
--- Indexes for table `tbl_warehouse`
+-- Chỉ mục cho bảng `tbl_warehouse`
 --
 ALTER TABLE `tbl_warehouse`
   ADD PRIMARY KEY (`id_warehouse`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_brand`
+-- AUTO_INCREMENT cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `tbl_cart`
+-- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
   MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tbl_customer`
+-- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `tbl_order`
+-- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
--- AUTO_INCREMENT for table `tbl_product`
+-- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT for table `tbl_slider`
+-- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
-  MODIFY `sliderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `sliderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `tbl_warehouse`
+-- AUTO_INCREMENT cho bảng `tbl_warehouse`
 --
 ALTER TABLE `tbl_warehouse`
   MODIFY `id_warehouse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;

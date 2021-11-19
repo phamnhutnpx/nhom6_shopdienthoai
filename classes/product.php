@@ -285,7 +285,7 @@
 		}
 		//END BACKEND 
 		public function getproduct_feathered(){
-			$query = "SELECT * FROM tbl_product where type = '0' order by RAND() LIMIT 8 ";
+			$query = "SELECT * FROM tbl_product where type = '0' order by RAND() LIMIT 4 ";
 			$result = $this->db->select($query);
 			return $result;
 		} 

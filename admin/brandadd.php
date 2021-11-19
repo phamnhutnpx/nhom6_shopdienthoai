@@ -24,7 +24,7 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="brandName" placeholder="Làm ơn thêm thương hiệu sản phẩm..." class="medium" />
+                                <input type="text" name="brandName" placeholder="Nhập thương hiệu sản phẩm..." class="medium" />
                             </td>
                         </tr>
 						<tr> 

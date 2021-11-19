@@ -23,7 +23,7 @@
 					<thead>
 						<tr>
 							<th>STT</th>
-							<th>Tên sản phẩm</th>
+							<th>Tên Thương hiệu</th>
 							<th>Thao tác</th>
 						</tr>
 					</thead>

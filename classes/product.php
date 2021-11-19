@@ -124,15 +124,6 @@
 			return $result;
 		}
 		public function show_product(){
-			// $query = "
-
-			// SELECT p.*,c.catName, b.brandName
-
-			// FROM tbl_product as p,tbl_category as c, tbl_brand as b where p.catId = c.catId 
-
-			// AND p.brandId = b.brandId 
-
-			// order by p.productId desc";
 
 			$query = "
 
@@ -207,6 +198,7 @@
 				    $alert = "<span class='success'>Bạn chỉ có thể tải lên:-".implode(', ', $permited)."</span>";
 					return $alert;
 					}
+					
 					move_uploaded_file($file_temp,$uploaded_image);
 					$query = "UPDATE tbl_product SET
 					productName = '$productName',
@@ -217,6 +209,15 @@
 					image = '$unique_image',
 					product_desc = '$product_desc'
 					WHERE productId = '$id'";
+					//xóa hình ảnh trong thư mục upload
+					$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
+					$get_image = $this->db->select($query);
+					if($get_image)
+					{
+					$result_image = $get_image->fetch_assoc();
+					$temp = $result_image['image'];
+					unlink('../admin/uploads/'.$temp);
+					}
 					
 				}else{
 					//Nếu người dùng không chọn ảnh
@@ -252,6 +253,7 @@
 			$alert = '<span class = "error">Sản phẩm đang nằm trong danh sách đơn hàng! Không thể xóa được!</span>';
 			return $alert;
 		} else {
+			//xóa hình ảnh trong thư mục upload
 			$query = "SELECT * FROM tbl_product WHERE productId = '$id'";
 			$get_image = $this->db->select($query);
 			if($get_image)

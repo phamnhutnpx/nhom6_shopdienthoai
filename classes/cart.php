@@ -31,7 +31,7 @@
 				$temp = $result_cart["quantity"];
 				$quantity = $quantity + $temp;
 				$this->update_quantity_cart($quantity, $cartId);
-				$msg = "<span class='error'>Thêm sản phẩm thành công</span>";
+				$msg = "<span class='success'>Thêm sản phẩm thành công</span>";
 				return $msg;
 			}else{
 

@@ -1871,8 +1871,6 @@ button.grey:hover,
 
 .group {
     zoom: 1;
-    display: flex;
-    justify-content: space-around;
 }
 
 .col {

@@ -46,9 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 									$login_check = Session::get('customer_login');
 									$temp='';
 									if ($login_check == false) 
-										$temp = '<button ><a class"buttons" onclick = "return confirm(\'Bạn phải đăng nhập để vào giỏ hàng?\') " href="login.php">Thêm vào giỏ hàng</a></button>';
+										$temp = '<a style="background:#333; color: #fff; text-decoration: none; padding: 9px 18px; ";  class"buttons" onclick = "return confirm(\'Bạn phải đăng nhập để vào giỏ hàng?\') " href="login.php">Thêm vào giỏ hàng</a>';
 									else
-										$temp = '<input type="submit" class="buttons" name="submit" value="Thêm vào giỏ hàng" />';
+										$temp = '<input style="background:#333; color: #fff; text-decoration: none; padding: 9px 18px; ";  type="submit" class="buttons" name="submit" value="Thêm vào giỏ hàng" />';
 
 										echo $temp;
 									?>

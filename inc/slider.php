@@ -4,17 +4,17 @@
    <div class="mySlides fade">
      <div class="numbertext">1 / 3</div>
      <img src="https://cdn.tgdd.vn/2021/11/banner/cbfold3-830-300-830x300.png" style="width:100%">
-     <div class="text">Nội Dung 1</div>
+     <div class="text"></div>
    </div>
   <div class="mySlides fade">
      <div class="numbertext">2 / 3</div>
      <img src="https://cdn.tgdd.vn/2021/10/banner/renno6-seri-830-300-830x300-3.png" style="width:100%">
-     <div class="text">Nội Dung 2</div>
+     <div class="text"></div>
    </div>
   <div class="mySlides fade">
      <div class="numbertext">3 / 3</div>
      <img src="https://cdn.tgdd.vn/2021/11/banner/830-300-830x300-3.png" style="width:100%">
-     <div class="text">Nội Dung 3</div>
+     <div class="text"></div>
    </div>
   <!-- Nút điều khiển mũi tên-->
    <a class="prev" onclick="plusSlides(-1)">❮</a>

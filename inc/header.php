@@ -64,9 +64,10 @@ header("Cache-Control: max-age=2592000");
 		})
 	</script>
 	<style>
-		.toggle__menu{
-			color: white;
-			width: 100px
+		.toggle__menu {
+		color: white;
+		width: 100%;
+		margin-top: 13px;
 		}
 		.container-fluid{
 			display: flex;

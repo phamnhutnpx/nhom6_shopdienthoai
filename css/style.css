@@ -341,7 +341,7 @@ body {
 }
 
 .grid_1_of_4.images_1_of_4 {
-    height: 420px;
+    height: 100%;
 }
 
 .shopping_cart .cart .opencart {
@@ -2461,7 +2461,7 @@ button .buysubmit {
         width: 95%;
     }
     .navbar-nav {
-        margin: 7.5px 0;
+        margin: 7.5px 0 !important;
         width: 100%;
     }
 }
@@ -3042,7 +3042,7 @@ button .buysubmit {
         margin: 0% 0 0% 0%;
     }
     .images_1_of_4 {
-        width: 95%;
+        width: 100%;
         padding: 2.5%;
     }
 }

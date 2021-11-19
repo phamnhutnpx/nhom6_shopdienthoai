@@ -1,8 +1,11 @@
-<?php include 'inc/header.php';?>
-<?php include 'inc/sidebar.php';?>
-<?php include '../classes/brand.php';?>
-<?php include '../classes/category.php';?>
-<?php include '../classes/product.php';?>
+<?php 
+    include 'inc/header.php';
+    include 'inc/sidebar.php';
+    include '../classes/brand.php';
+    include '../classes/category.php';
+    include '../classes/product.php';
+?>
+
 <?php
     $pd = new product();
 
@@ -42,6 +45,15 @@
                     </td>
                     <td>
                         <input type="text"  name="productName" value="<?php echo  $result_product['productName']?>" class="medium" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Số lượng sản phẩm</label>
+                    </td>
+                    <td>
+                        <input type="number" name="productQuantity" 
+                        value="<?php echo  $result_product['productQuantity']?>"placeholder="Nhập số lượng" class="medium" />
                     </td>
                 </tr>
 				<tr>

@@ -30,7 +30,15 @@
                         <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name="productName" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name="productName" placeholder="Nhập tên" class="medium" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Số lượng sản phẩm</label>
+                    </td>
+                    <td>
+                        <input type="number" name="productQuantity" placeholder="Nhập số lượng" class="medium" />
                     </td>
                 </tr>
 				<tr>

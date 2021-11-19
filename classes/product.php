@@ -30,6 +30,7 @@
 
 			//xử lí kí tự đầu vào thông qua mysqli
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
+			$productQuantity = mysqli_real_escape_string($this->db->link, $data['productQuantity']);
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
 			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
@@ -47,12 +48,12 @@
 			$unique_image = substr(md5(time()), 0, 10).'.'.$file_ext;
 			$uploaded_image = "uploads/".$unique_image;
 			
-			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type=="" || $file_name ==""){
+			if($productName=="" || $productQuantity=="" ||  $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type=="" || $file_name ==""){
 				$alert = "<span class='error'>Không được để trống trường này</span>";
 				return $alert;
 			}else{
 				move_uploaded_file($file_temp,$uploaded_image);
-				$query = "INSERT INTO tbl_product(productName,brandId,catId,product_desc,price,type,image) VALUES('$productName','$brand','$category','$product_desc','$price','$type','$unique_image')";
+				$query = "INSERT INTO tbl_product(productName,productQuantity,brandId,catId,product_desc,price,type,image) VALUES('$productName', '$productQuantity','$brand','$category','$product_desc','$price','$type','$unique_image')";
 				$result = $this->db->insert($query);
 				if($result){
 					$alert = "<span class='success'>Thêm sản phẩm thành công</span>";
@@ -169,13 +170,15 @@
 		}
 		public function update_product($data,$files,$id){
 
-		
+			//xử lí kí tự đầu vào thông qua mysqli
 			$productName = mysqli_real_escape_string($this->db->link, $data['productName']);
+			$productQuantity = mysqli_real_escape_string($this->db->link, $data['productQuantity']);
 			$brand = mysqli_real_escape_string($this->db->link, $data['brand']);
 			$category = mysqli_real_escape_string($this->db->link, $data['category']);
 			$product_desc = mysqli_real_escape_string($this->db->link, $data['product_desc']);
 			$price = mysqli_real_escape_string($this->db->link, $data['price']);
 			$type = mysqli_real_escape_string($this->db->link, $data['type']);
+
 			//Kiem tra hình ảnh và lấy hình ảnh cho vào folder upload
 			$permited  = array('jpg', 'jpeg', 'png', 'gif');
 
@@ -190,8 +193,8 @@
 			$uploaded_image = "uploads/".$unique_image;
 
 
-			if($productName=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type==""){
-				$alert = "<span class='error'>Fields must be not empty</span>";
+			if($productName=="" || $productQuantity=="" || $brand=="" || $category=="" || $product_desc=="" || $price=="" || $type==""){
+				$alert = "<span class='error'>Không để trống các trường này</span>";
 				return $alert;
 			}else{
 				if(!empty($file_name)){
@@ -210,6 +213,7 @@
 					move_uploaded_file($file_temp,$uploaded_image);
 					$query = "UPDATE tbl_product SET
 					productName = '$productName',
+					productQuantity = '$productQuantity',
 					brandId = '$brand',
 					catId = '$category', 
 					type = '$type', 
@@ -223,11 +227,11 @@
 					$query = "UPDATE tbl_product SET
 
 					productName = '$productName',
+					productQuantity = '$productQuantity',
 					brandId = '$brand',
 					catId = '$category', 
 					type = '$type', 
 					price = '$price', 
-					
 					product_desc = '$product_desc'
 
 					WHERE productId = '$id'";

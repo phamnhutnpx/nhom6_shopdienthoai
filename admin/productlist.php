@@ -27,6 +27,7 @@
 				<tr>
 					<th>ID</th>
 					<th>Tên sản phẩm</th>
+					<th>Số lượng</th>
 					<th>Giá sản phẩm</th>
 					<th>Ảnh sản phẩm</th>
 					<th>Danh mục</th>
@@ -48,6 +49,7 @@
 				<tr class="odd gradeX">
 					<td><?php echo $i ?></td>
 					<td><?php echo $result['productName'] ?></td>
+					<td><?php echo $result['productQuantity'] ?></td>
 					<td><?php echo $result['price'] ?></td>
 					<td><img src="uploads/<?php echo $result['image'] ?>" width="80"></td>
 					<td><?php echo $result['catName'] ?></td>

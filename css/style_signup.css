@@ -23,7 +23,6 @@ body {
     position: absolute;
     top: 50px;
     left: 50%;
-    width: 400px;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
@@ -90,7 +89,7 @@ div .content {
     margin-top: 20px;
     letter-spacing: 4px;
     opacity: 0.6;
-    width: 150px;
+    width: auto;
 }
 
 .buttons input {
@@ -143,4 +142,26 @@ div .content {
     transform: translateX(-50px);
     text-align: center;
     color: #fff;
+}
+
+.register_account table td {
+    width: 100%;
+    display: block;
+}
+
+.register_account {
+    width: 100%;
+    height: auto;
+    background: none;
+    border: none;
+}
+
+.register_account .field,
+.register_account form input[type="text"] {
+    width: 100%;
+    margin: 8px 0 8px 0;
+}
+
+.register_account .field {
+    width: 340px;
 }

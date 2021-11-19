@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 				<div class="buttons">
 					<a href="index.php">Quay lại</a>
 					<input type="submit" name="login" class="grey" value="Đăng nhập">
-					
+					<a class= "sign_up" href="signup.php">Tạo tài khoản</a>
 				</div>
 			</form>
 		</div>

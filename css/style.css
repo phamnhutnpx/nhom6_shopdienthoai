@@ -2082,6 +2082,22 @@ table.tblone img {
     margin-bottom: 15px;
 }
 
+.toggle__menu-wrap {
+    display: none;
+}
+
+.images_1_of_4 .button a {
+    background: #333;
+    color: #fff;
+}
+
+button .buysubmit {
+    color: #fff;
+    background: #333;
+    text-decoration: none;
+    padding: 5px 25px;
+}
+
 
 /**** Responsive Layout ****/
 
@@ -2444,9 +2460,29 @@ table.tblone img {
     .login_panel input[type="password"] {
         width: 95%;
     }
+    .navbar-nav {
+        margin: 7.5px 0;
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 640px) {
+    .fa-align-justify {
+        padding-top: 3px;
+    }
+    .container-fluid {
+        display: flex;
+        flex-direction: column;
+    }
+    .toggle__menu {
+        display: block;
+    }
+    .toggle__menu-wrap {
+        display: block;
+    }
+    .container-fluid {
+        display: none;
+    }
     .wrap {
         width: 96%;
     }

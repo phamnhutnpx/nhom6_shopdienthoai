@@ -36,7 +36,6 @@ header("Cache-Control: max-age=2592000");
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
-	
 	<script src="js/jquerymain.js"></script>
 	<script src="js/script.js" type="text/javascript"></script>
 
@@ -46,7 +45,7 @@ header("Cache-Control: max-age=2592000");
 	<script type="text/javascript" src="js/nav-hover.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 	<!-- Latest compiled and minified JavaScript -->
 	<script type="text/javascript">
 		$(document).ready(function($) {
@@ -56,7 +55,28 @@ header("Cache-Control: max-age=2592000");
 				effect: 'fade'
 			});
 		});
+
+		$(document).ready(function(){
+			$('.toggle__menu').click(function(){
+				$('.nav').slideToggle()
+			})
+			
+		})
 	</script>
+	<style>
+		.toggle__menu{
+			color: white;
+			width: 100px
+		}
+		.container-fluid{
+			display: flex;
+		}
+		/* .far{
+        display: none;
+    } */
+	
+
+	</style>
 </head>
 
 <body>
@@ -66,9 +86,9 @@ header("Cache-Control: max-age=2592000");
 				<a href="index.php"><img src="images/logo.png" alt="" /></a>
 			</div>
 			<div class="header_top_right">
-				<div class="search_box">
-					<form action="search.php" method="post">
-						<input type="text" placeholder="Tìm kiếm sản phẩm" name="tukhoa">
+				<div class="search_box input__search-header">
+					<form action="search.php"  method="post">
+						<input type="text"  placeholder="Tìm kiếm sản phẩm" name="tukhoa">
 						<input type="submit" name="search_product" value="Tìm kiếm">
 					</form>
 				</div>
@@ -97,11 +117,15 @@ header("Cache-Control: max-age=2592000");
 			<div class="menu">
 				<nav class="navbar navbar-inverse">
 					<div class="container-fluid">
+					        <li class="toggle__menu-wrap">
+								<div class="toggle__menu"><i class="far fa-align-justify"></i></div>
+							</li>
 						<ul class="nav navbar-nav">
+							
 							<li class="active"><a href="index.php">Trang chủ</a></li>
 							<li class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-									Danh mục
+									Danh mục sản phẩm
 									<span class="caret"></span></a>
 								<ul class="dropdown-menu">
 									<?php
@@ -141,17 +165,15 @@ header("Cache-Control: max-age=2592000");
 
 								</ul>
 							</li>
-								
 
-							
+
+							<li><a href="cart.php">Giỏ hàng</a></li>
 
 							<?php
 							$login_check = Session::get('customer_login');
 							if ($login_check == false) {
-								$temp = '<li><a onclick = "return confirm(\'Bạn phải đăng nhập để vào giỏ hàng?\') " href="login.php">Giỏ hàng</a></li>';
-								echo $temp;
+								echo '';
 							} else {
-								echo '<li><a href="cart.php">Giỏ hàng</a></li>>';
 								echo '<li><a href="profile.php">Tài khoản</a> </li>';
 							}
 							?>

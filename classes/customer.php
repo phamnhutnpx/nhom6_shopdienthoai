@@ -18,11 +18,13 @@
 		}
 
 		public function insert_customers($data){
+
 			$name = mysqli_real_escape_string($this->db->link, $data['name']);
 			$email = mysqli_real_escape_string($this->db->link, $data['email']);
 			$password = mysqli_real_escape_string($this->db->link, sha1($data['password']));
 			$address = mysqli_real_escape_string($this->db->link, $data['address']);
 			$phone = mysqli_real_escape_string($this->db->link, $data['phone']);
+
 			if($name==""|| $email=="" || $password =="" || $address=="" || $phone ==""){
 				$alert = "<span class='error'>Không được để trống các thông tin.</span>";
 				return $alert;
@@ -37,6 +39,7 @@
 					$result = $this->db->insert($query);
 					if($result){
 						$alert = "<span class='success'>Tạo tài khoản thành công!</span>";
+						echo "<script>window.location ='index.php'</script>";
 						return $alert;
 					}else{
 						$alert = "<span class='error'>Tạo tài khoản không thành công!</span>";

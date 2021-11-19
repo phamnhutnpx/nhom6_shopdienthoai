@@ -167,18 +167,17 @@ header("Cache-Control: max-age=2592000");
 								</ul>
 							</li>
 
-
-							<li><a href="cart.php">Giỏ hàng</a></li>
-
 							<?php
 							$login_check = Session::get('customer_login');
 							if ($login_check == false) {
-								echo '';
+								$temp = '<li><a onclick = "return confirm(\'Bạn phải đăng nhập để vào giỏ hàng?\') " href="login.php">Giỏ hàng</a></li>';
+								echo $temp;
 							} else {
+								echo '<li><a href="cart.php">Giỏ hàng</a></li>>';
 								echo '<li><a href="profile.php">Tài khoản</a> </li>';
 							}
 							?>
-
+							
 							<li><a href="contact.php">Liên hệ</a></li>
 
 						</ul>

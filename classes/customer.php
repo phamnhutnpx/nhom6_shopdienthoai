@@ -39,7 +39,7 @@
 					$result = $this->db->insert($query);
 					if($result){
 						$alert = "<span class='success'>Tạo tài khoản thành công!</span>";
-						echo "<script>window.location ='index.php'</script>";
+						echo "<script>window.location ='login.php'</script>";
 						return $alert;
 					}else{
 						$alert = "<span class='error'>Tạo tài khoản không thành công!</span>";

@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 18, 2021 lúc 08:09 AM
--- Phiên bản máy phục vụ: 10.4.21-MariaDB
--- Phiên bản PHP: 7.3.31
+-- Host: 127.0.0.1
+-- Generation Time: Nov 19, 2021 at 05:35 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `nhom7_shopdienthoai`
+-- Database: `nhom7_shopdienthoai`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_admin`
+-- Table structure for table `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_admin`
+-- Dumping data for table `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adminPass`, `level`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adm
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_brand`
+-- Table structure for table `tbl_brand`
 --
 
 CREATE TABLE `tbl_brand` (
@@ -55,20 +55,22 @@ CREATE TABLE `tbl_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_brand`
+-- Dumping data for table `tbl_brand`
 --
 
 INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 (6, 'Samsung'),
-(7, 'Apple'),
+(7, 'Iphone'),
 (8, 'Huawei'),
 (9, 'Oppo'),
-(16, 'Xiaomi');
+(16, 'Xiaomi'),
+(18, 'Vivo'),
+(19, 'Nokia');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_cart`
+-- Table structure for table `tbl_cart`
 --
 
 CREATE TABLE `tbl_cart` (
@@ -82,7 +84,7 @@ CREATE TABLE `tbl_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_cart`
+-- Dumping data for table `tbl_cart`
 --
 
 INSERT INTO `tbl_cart` (`cartId`, `productId`, `customerId`, `productName`, `price`, `quantity`, `image`) VALUES
@@ -92,7 +94,7 @@ INSERT INTO `tbl_cart` (`cartId`, `productId`, `customerId`, `productName`, `pri
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_category`
+-- Table structure for table `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -101,17 +103,20 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_category`
+-- Dumping data for table `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`catId`, `catName`) VALUES
-(20, 'SmartPhone'),
-(21, 'MobilePhone');
+(20, 'Điện thoại Android'),
+(21, 'Điện thoại phổ thông'),
+(22, 'Phụ kiện điện thoại'),
+(24, 'Điện thoại cũ'),
+(25, 'Điện thoại Iphone(IOS)');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_customer`
+-- Table structure for table `tbl_customer`
 --
 
 CREATE TABLE `tbl_customer` (
@@ -124,16 +129,17 @@ CREATE TABLE `tbl_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_customer`
+-- Dumping data for table `tbl_customer`
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `address`, `phone`, `email`, `password`) VALUES
-(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43');
+(6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'),
+(7, 'Khắc Tuấn', 'Cẩm xuyên,Hà tĩnh', '0947383434', 'tuan@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_order`
+-- Table structure for table `tbl_order`
 --
 
 CREATE TABLE `tbl_order` (
@@ -149,25 +155,23 @@ CREATE TABLE `tbl_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_order`
+-- Dumping data for table `tbl_order`
 --
 
 INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quantity`, `price`, `image`, `status`, `date_order`) VALUES
-(76, 29, 'Xiaomi redmi note 11', 6, 1, '7500000', '56ce5d1ee0.jpg', 1, '2021-11-17 22:56:16');
+(81, 45, 'IPhone 13 Pro Max 512GB', 7, 1, '42990000', 'b031439f96.jpg', 0, '2021-11-19 11:29:53'),
+(82, 48, 'IPhone 13 mini 128GB', 7, 1, '21990000', 'a0fd8947b2.jpg', 0, '2021-11-19 11:29:53');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_product`
+-- Table structure for table `tbl_product`
 --
 
 CREATE TABLE `tbl_product` (
   `productId` int(11) NOT NULL,
   `productName` tinytext COLLATE utf8_unicode_ci NOT NULL,
-  `product_code` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `productQuantity` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `product_soldout` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `product_remain` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `catId` int(11) NOT NULL,
   `brandId` int(11) NOT NULL,
   `product_desc` text COLLATE utf8_unicode_ci NOT NULL,
@@ -177,20 +181,26 @@ CREATE TABLE `tbl_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_product`
+-- Dumping data for table `tbl_product`
 --
 
-INSERT INTO `tbl_product` (`productId`, `productName`, `product_code`, `productQuantity`, `product_soldout`, `product_remain`, `catId`, `brandId`, `product_desc`, `type`, `price`, `image`) VALUES
-(30, 'Điện thoại Samsung Galaxy Z Fold3 5G 512GB', '', '', '0', '', 20, 6, '<p>Điện thoại Samsung Galaxy Z Fold3 5G 512GB</p>', 0, '43990000', 'caecebb338.jpg'),
-(32, 'Điện thoại OPPO Reno6 Pro 5G', '', '', '0', '', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', '1a98cfd5af.jpg'),
-(34, ' Xiaomi Redmi Note 11', '', '', '0', '', 20, 16, '<p>&nbsp;Xiaomi Redmi Note 11</p>', 0, '7500000', '88742d8a1e.jpg'),
-(35, 'Điện thoại iPhone 13 Pro Max 128GB', '', '', '0', '', 20, 7, '<p>Điện thoại iPhone 13 Pro Max 128GB</p>', 0, '33990000', '38d0cbb9cb.jpg'),
-(36, 'Điện thoại iPhone 13 Pro Max 128GB', '', '', '0', '', 20, 8, '<p>Điện thoại iPhone 13 Pro Max 128GB</p>', 0, '3399000', 'fa3066942e.jpg');
+INSERT INTO `tbl_product` (`productId`, `productName`, `productQuantity`, `catId`, `brandId`, `product_desc`, `type`, `price`, `image`) VALUES
+(30, 'Samsung Galaxy Z Fold3 5G 512GB', '', 20, 6, '<p>Điện thoại Samsung Galaxy Z Fold3 5G 512GB</p>', 0, '43990000', 'caecebb338.jpg'),
+(32, 'OPPO Reno6 Pro 5G', '', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', '1a98cfd5af.jpg'),
+(34, ' Xiaomi Redmi Note 11', '', 20, 16, '<p>&nbsp;Xiaomi Redmi Note 11</p>', 1, '7500000', '88742d8a1e.jpg'),
+(35, 'iPhone 13 Pro Max 128GB', '', 25, 7, '<p>Điện thoại iPhone 13 Pro Max 128GB</p>', 0, '33990000', '38d0cbb9cb.jpg'),
+(42, 'iPhone 12 Pro Max 128GB', '', 25, 7, '<p><span>Điện thoại iPhone 12 Pro Max 128GB</span></p>', 0, '31990000', 'f2998e6ee9.jpg'),
+(43, 'Xiaomi 11T 5G 128GB', '', 20, 16, '<p><span>Điện thoại Xiaomi 11T 5G 128GB</span></p>', 0, '10490000', 'cf047b7ec0.jpg'),
+(44, 'OPPO A74', '', 20, 9, '<p><span>Điện thoại OPPO A74</span></p>', 1, '6690000', '87b4b8a73c.jpg'),
+(45, 'IPhone 13 Pro Max 512GB', '', 25, 7, '<p><span>Điện thoại iPhone 13 Pro Max 512GB</span></p>', 0, '42990000', 'b031439f96.jpg'),
+(46, 'Samsung Galaxy S21 Ultra 5G 128GB', '', 20, 6, '<p><span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span></p>\r\n<div class=\"ddict_btn\" style=\"top: 71px; left: 238.328px;\"><img src=\"chrome-extension://bpggmmljdiliancllaapiggllnkbjocb/logo/16.png\" alt=\"\" /></div>', 1, '25990000', 'd67446f841.jpg'),
+(47, 'OPPO Find X3 Pro 5G', '', 20, 9, '<p><span>Điện thoại OPPO Find X3 Pro 5G</span></p>', 1, '23990000', '2829cebb91.jpg'),
+(48, 'IPhone 13 mini 128GB', '', 25, 7, '<p><span>Điện thoại iPhone 13 mini 128GB</span></p>', 1, '21990000', 'a0fd8947b2.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `tbl_slider`
+-- Table structure for table `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -201,7 +211,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `tbl_slider`
+-- Dumping data for table `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALUES
@@ -210,105 +220,105 @@ INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALU
 (20, 'slide3', '9374ffe429.png', 1);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `tbl_admin`
+-- Indexes for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
--- Chỉ mục cho bảng `tbl_brand`
+-- Indexes for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   ADD PRIMARY KEY (`brandId`);
 
 --
--- Chỉ mục cho bảng `tbl_cart`
+-- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`cartId`);
 
 --
--- Chỉ mục cho bảng `tbl_category`
+-- Indexes for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`catId`);
 
 --
--- Chỉ mục cho bảng `tbl_customer`
+-- Indexes for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_order`
+-- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `tbl_product`
+-- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`productId`);
 
 --
--- Chỉ mục cho bảng `tbl_slider`
+-- Indexes for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`sliderId`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `tbl_admin`
+-- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_brand`
+-- AUTO_INCREMENT for table `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
-  MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_cart`
+-- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_category`
+-- AUTO_INCREMENT for table `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_customer`
+-- AUTO_INCREMENT for table `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_order`
+-- AUTO_INCREMENT for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_product`
+-- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
--- AUTO_INCREMENT cho bảng `tbl_slider`
+-- AUTO_INCREMENT for table `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `sliderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;

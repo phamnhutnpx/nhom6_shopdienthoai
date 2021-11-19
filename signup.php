@@ -15,12 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 	$insertCustomers = $cs->insert_customers($_POST);
 }
 ?>
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 
-	$login_Customers = $cs->login_customers($_POST);
-}
-?>
 <link href="css/style_signup.css" rel="stylesheet" type="text/css" media="all" />
 <div class="main">
 	<div class="content">
@@ -61,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
 				</table>
 				
 					<div class="buttons">
+						<a href="login.php">Đăng nhập</a>
 						<input type="submit" name="submit" class="grey" value="Tạo tài khoản">
 					</div>
 				

@@ -25,7 +25,7 @@
                     <table class="form">					
                         <tr>
                             <td>
-                                <input type="text" name="catName" placeholder="Làm ơn thêm danh mục sản phẩm..." class="medium" />
+                                <input type="text" name="catName" placeholder="Nhập danh mục sản phẩm..." class="medium" />
                             </td>
                         </tr>
 						<tr> 

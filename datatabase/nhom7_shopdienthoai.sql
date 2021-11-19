@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 05:35 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th10 19, 2021 lúc 06:43 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `nhom7_shopdienthoai`
+-- Cơ sở dữ liệu: `nhom7_shopdienthoai`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_admin`
+-- Cấu trúc bảng cho bảng `tbl_admin`
 --
 
 CREATE TABLE `tbl_admin` (
@@ -37,7 +37,7 @@ CREATE TABLE `tbl_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_admin`
+-- Đang đổ dữ liệu cho bảng `tbl_admin`
 --
 
 INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adminPass`, `level`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `tbl_admin` (`adminId`, `adminName`, `adminEmail`, `adminUser`, `adm
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_brand`
+-- Cấu trúc bảng cho bảng `tbl_brand`
 --
 
 CREATE TABLE `tbl_brand` (
@@ -55,22 +55,22 @@ CREATE TABLE `tbl_brand` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_brand`
+-- Đang đổ dữ liệu cho bảng `tbl_brand`
 --
 
 INSERT INTO `tbl_brand` (`brandId`, `brandName`) VALUES
 (6, 'Samsung'),
-(7, 'Iphone'),
+(7, 'Apple'),
 (8, 'Huawei'),
 (9, 'Oppo'),
 (16, 'Xiaomi'),
-(18, 'Vivo'),
-(19, 'Nokia');
+(18, 'Pixel'),
+(19, 'Vivo');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_cart`
+-- Cấu trúc bảng cho bảng `tbl_cart`
 --
 
 CREATE TABLE `tbl_cart` (
@@ -84,17 +84,17 @@ CREATE TABLE `tbl_cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_cart`
+-- Đang đổ dữ liệu cho bảng `tbl_cart`
 --
 
 INSERT INTO `tbl_cart` (`cartId`, `productId`, `customerId`, `productName`, `price`, `quantity`, `image`) VALUES
-(23, 34, 6, ' Xiaomi Redmi Note 11', '7500000', 2, '88742d8a1e.jpg'),
-(24, 30, 6, 'Điện thoại Samsung Galaxy Z Fold3 5G 512GB', '43990000', 16, 'caecebb338.jpg');
+(28, 30, 6, 'Samsung Galaxy Z Fold3 5G 512GB', '43990000', 2, 'caecebb338.jpg'),
+(29, 34, 6, ' Xiaomi Redmi Note 11', '7500000', 1, '88742d8a1e.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_category`
+-- Cấu trúc bảng cho bảng `tbl_category`
 --
 
 CREATE TABLE `tbl_category` (
@@ -103,20 +103,17 @@ CREATE TABLE `tbl_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_category`
+-- Đang đổ dữ liệu cho bảng `tbl_category`
 --
 
 INSERT INTO `tbl_category` (`catId`, `catName`) VALUES
-(20, 'Điện thoại Android'),
-(21, 'Điện thoại phổ thông'),
-(22, 'Phụ kiện điện thoại'),
-(24, 'Điện thoại cũ'),
-(25, 'Điện thoại Iphone(IOS)');
+(20, 'SmartPhone'),
+(21, 'MobilePhone');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_customer`
+-- Cấu trúc bảng cho bảng `tbl_customer`
 --
 
 CREATE TABLE `tbl_customer` (
@@ -129,17 +126,20 @@ CREATE TABLE `tbl_customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_customer`
+-- Đang đổ dữ liệu cho bảng `tbl_customer`
 --
 
 INSERT INTO `tbl_customer` (`id`, `name`, `address`, `phone`, `email`, `password`) VALUES
 (6, 'Pham Xuan Nhut', 'Số 1 Lê Duẩn, Bến Nghé, Quận 1', '0932023992', 'xuannhutzz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'),
-(7, 'Khắc Tuấn', 'Cẩm xuyên,Hà tĩnh', '0947383434', 'tuan@gmail.com', '356a192b7913b04c54574d18c28d46e6395428ab');
+(7, 'Phạm Xuân Nhựt', 'Gò Vấp', '0234568455', '1951120118@sv.ut.edu.vn', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'),
+(8, 'Phạm Nhựt', 'nhà tui á', '0394830339', 'npx6101@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'),
+(9, 'CellphoneS', 'nhà tui á', '0234568455', 'xuannhutzzz@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43'),
+(10, 'Xuân Nhựt aaa', 'Gò Vấp', '0707937699', 'xuannhutaaa@gmail.com', '39dfa55283318d31afe5a3ff4a0e3253e2045e43');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_order`
+-- Cấu trúc bảng cho bảng `tbl_order`
 --
 
 CREATE TABLE `tbl_order` (
@@ -155,17 +155,19 @@ CREATE TABLE `tbl_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_order`
+-- Đang đổ dữ liệu cho bảng `tbl_order`
 --
 
 INSERT INTO `tbl_order` (`id`, `productId`, `productName`, `customer_id`, `quantity`, `price`, `image`, `status`, `date_order`) VALUES
-(81, 45, 'IPhone 13 Pro Max 512GB', 7, 1, '42990000', 'b031439f96.jpg', 0, '2021-11-19 11:29:53'),
-(82, 48, 'IPhone 13 mini 128GB', 7, 1, '21990000', 'a0fd8947b2.jpg', 0, '2021-11-19 11:29:53');
+(77, 34, ' Xiaomi Redmi Note 11', 6, 2, '15000000', '88742d8a1e.jpg', 0, '2021-11-18 19:42:46'),
+(78, 30, 'Điện thoại Samsung Galaxy Z Fold3 5G 512GB', 6, 16, '703840000', 'caecebb338.jpg', 0, '2021-11-18 19:42:46'),
+(79, 32, 'Điện thoại OPPO Reno6 Pro 5G', 6, 1, '18490000', '1a98cfd5af.jpg', 0, '2021-11-19 00:20:05'),
+(80, 34, ' Xiaomi Redmi Note 11', 6, 2, '15000000', '88742d8a1e.jpg', 0, '2021-11-19 00:20:05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_product`
+-- Cấu trúc bảng cho bảng `tbl_product`
 --
 
 CREATE TABLE `tbl_product` (
@@ -181,26 +183,21 @@ CREATE TABLE `tbl_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_product`
+-- Đang đổ dữ liệu cho bảng `tbl_product`
 --
 
 INSERT INTO `tbl_product` (`productId`, `productName`, `productQuantity`, `catId`, `brandId`, `product_desc`, `type`, `price`, `image`) VALUES
-(30, 'Samsung Galaxy Z Fold3 5G 512GB', '', 20, 6, '<p>Điện thoại Samsung Galaxy Z Fold3 5G 512GB</p>', 0, '43990000', 'caecebb338.jpg'),
-(32, 'OPPO Reno6 Pro 5G', '', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', '1a98cfd5af.jpg'),
-(34, ' Xiaomi Redmi Note 11', '', 20, 16, '<p>&nbsp;Xiaomi Redmi Note 11</p>', 1, '7500000', '88742d8a1e.jpg'),
-(35, 'iPhone 13 Pro Max 128GB', '', 25, 7, '<p>Điện thoại iPhone 13 Pro Max 128GB</p>', 0, '33990000', '38d0cbb9cb.jpg'),
-(42, 'iPhone 12 Pro Max 128GB', '', 25, 7, '<p><span>Điện thoại iPhone 12 Pro Max 128GB</span></p>', 0, '31990000', 'f2998e6ee9.jpg'),
-(43, 'Xiaomi 11T 5G 128GB', '', 20, 16, '<p><span>Điện thoại Xiaomi 11T 5G 128GB</span></p>', 0, '10490000', 'cf047b7ec0.jpg'),
-(44, 'OPPO A74', '', 20, 9, '<p><span>Điện thoại OPPO A74</span></p>', 1, '6690000', '87b4b8a73c.jpg'),
-(45, 'IPhone 13 Pro Max 512GB', '', 25, 7, '<p><span>Điện thoại iPhone 13 Pro Max 512GB</span></p>', 0, '42990000', 'b031439f96.jpg'),
-(46, 'Samsung Galaxy S21 Ultra 5G 128GB', '', 20, 6, '<p><span>Điện thoại Samsung Galaxy S21 Ultra 5G 128GB</span></p>\r\n<div class=\"ddict_btn\" style=\"top: 71px; left: 238.328px;\"><img src=\"chrome-extension://bpggmmljdiliancllaapiggllnkbjocb/logo/16.png\" alt=\"\" /></div>', 1, '25990000', 'd67446f841.jpg'),
-(47, 'OPPO Find X3 Pro 5G', '', 20, 9, '<p><span>Điện thoại OPPO Find X3 Pro 5G</span></p>', 1, '23990000', '2829cebb91.jpg'),
-(48, 'IPhone 13 mini 128GB', '', 25, 7, '<p><span>Điện thoại iPhone 13 mini 128GB</span></p>', 1, '21990000', 'a0fd8947b2.jpg');
+(30, 'Samsung Galaxy Z Fold3 5G 512GB', '3', 20, 6, '<p>Samsung Galaxy Z Fold3 5G 512GB<img src=\"chrome-extension://bpggmmljdiliancllaapiggllnkbjocb/logo/16.png\" alt=\"\" /></p>', 0, '43990000', 'caecebb338.jpg'),
+(32, 'Điện thoại OPPO Reno6 Pro 5G', '4', 20, 9, '<p>Điện thoại OPPO Reno6 Pro 5G</p>', 0, '18490000', '1a98cfd5af.jpg'),
+(34, ' Xiaomi Redmi Note 11', '4', 20, 16, '<p>&nbsp;Xiaomi Redmi Note 11</p>', 0, '7500000', '88742d8a1e.jpg'),
+(35, 'Điện thoại iPhone 13 Pro Max', '2', 20, 7, '<p>Điện thoại iPhone 13</p>', 0, '33990000', '38d0cbb9cb.jpg'),
+(36, 'Điện thoại Huawei P30 Lite', '2', 20, 8, '<p>Điện thoại Huawei P30 Lite</p>\r\n<div class=\"ddict_btn\" style=\"top: 51px; left: 193.529px;\"><img src=\"chrome-extension://bpggmmljdiliancllaapiggllnkbjocb/logo/16.png\" alt=\"\" /></div>', 1, '3399000', 'fa3066942e.jpg'),
+(37, 'Điện thoại iPhone 14', '21', 20, 7, '<p>Điện thoại iPhone 14</p>', 1, '38490000', 'c9b7ac0df5.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_slider`
+-- Cấu trúc bảng cho bảng `tbl_slider`
 --
 
 CREATE TABLE `tbl_slider` (
@@ -211,7 +208,7 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `tbl_slider`
+-- Đang đổ dữ liệu cho bảng `tbl_slider`
 --
 
 INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALUES
@@ -220,105 +217,105 @@ INSERT INTO `tbl_slider` (`sliderId`, `sliderName`, `slider_image`, `type`) VALU
 (20, 'slide3', '9374ffe429.png', 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `tbl_admin`
+-- Chỉ mục cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`adminId`);
 
 --
--- Indexes for table `tbl_brand`
+-- Chỉ mục cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   ADD PRIMARY KEY (`brandId`);
 
 --
--- Indexes for table `tbl_cart`
+-- Chỉ mục cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`cartId`);
 
 --
--- Indexes for table `tbl_category`
+-- Chỉ mục cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
   ADD PRIMARY KEY (`catId`);
 
 --
--- Indexes for table `tbl_customer`
+-- Chỉ mục cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_order`
+-- Chỉ mục cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_product`
+-- Chỉ mục cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
   ADD PRIMARY KEY (`productId`);
 
 --
--- Indexes for table `tbl_slider`
+-- Chỉ mục cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   ADD PRIMARY KEY (`sliderId`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `tbl_admin`
+-- AUTO_INCREMENT cho bảng `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
   MODIFY `adminId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tbl_brand`
+-- AUTO_INCREMENT cho bảng `tbl_brand`
 --
 ALTER TABLE `tbl_brand`
   MODIFY `brandId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `tbl_cart`
+-- AUTO_INCREMENT cho bảng `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `cartId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT for table `tbl_category`
+-- AUTO_INCREMENT cho bảng `tbl_category`
 --
 ALTER TABLE `tbl_category`
-  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `catId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT for table `tbl_customer`
+-- AUTO_INCREMENT cho bảng `tbl_customer`
 --
 ALTER TABLE `tbl_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `tbl_order`
+-- AUTO_INCREMENT cho bảng `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT for table `tbl_product`
+-- AUTO_INCREMENT cho bảng `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `productId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `tbl_slider`
+-- AUTO_INCREMENT cho bảng `tbl_slider`
 --
 ALTER TABLE `tbl_slider`
   MODIFY `sliderId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;

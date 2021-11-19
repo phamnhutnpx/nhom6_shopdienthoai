@@ -37,8 +37,8 @@
 				<div class="col_1_of_4 span_1_of_4">
 					<h4>Kết nối</h4>
 						<ul>
-							<li><span>+84948300875</span></li>
-							<li><span>+84943012248</span></li>
+							<li><span>(+84) 222 666 444</span></li>
+							<li><span>(+84) 222 666 444</span></li>
 						</ul>
 						<div class="social-icons">
 							<h4>Follow Us</h4>

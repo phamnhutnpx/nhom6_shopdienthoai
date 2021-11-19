@@ -1,6 +1,5 @@
 <?php
 include 'inc/header.php';
-//include 'inc/slider.php';
 ?>
 <div class="main">
 	<div class="content">
@@ -8,7 +7,7 @@ include 'inc/header.php';
 			<div class="support_desc">
 				<h3>Hỗ trợ trực tuyến</h3>
 			</div>
-			<img src="web/images/contact.png" alt="" />
+			<img style="max-width: 100px;" src="images/contact.png" alt="" />
 			<div class="clear"></div>
 		</div>
 		<div class="section group">

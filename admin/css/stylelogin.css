@@ -233,7 +233,10 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: linear-gradient(#333, #444);
+    background-image: url(https://images.unsplash.com/photo-1529610542-3d3fa2e6535c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGhvbmUlMjBkYXJrfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 #content {
